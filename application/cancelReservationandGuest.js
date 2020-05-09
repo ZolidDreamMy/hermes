@@ -1,3 +1,4 @@
+// GROUP 2
 $(() =>{
     // var form = $("#form");
     // var id = $("#id").val();
@@ -19,7 +20,7 @@ function cancel_resinfo() {
             type: "get",
             url: api_url + key1 + "/" + key2,
             success: function(result, status, xhr) {
-                alert("success");
+                $('#modal_alert').modal('show');
             },
             error: function(xhr, status, error) {
                 alert(
@@ -48,7 +49,7 @@ function cancel_guest() {
             type: "get",
             url: api_url + key1 + "/" + key2,
             success: function(result, status, xhr) {
-                alert("success");
+                $('#modal_alert').modal('show');
             },
             error: function(xhr, status, error) {
                 alert(

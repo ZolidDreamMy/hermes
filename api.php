@@ -35,7 +35,7 @@ $container['db'] = function ($c) {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    return $pdo;
+    return $pdo;    
 };
 
 
@@ -61,49 +61,56 @@ $app->get('/getdb', function (Request $request, Response $response, array $args)
 
     return $this->response->withJson($sth);
 });
-// $app->get('/ShowReservation', function (Request $request, Response $response, array $args){
-//     $id = $args['resinfo_id'];
-//     $sql = "SELECT * FROM hermes.reservation_info ";
-//     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-//     return $this->response->withJson($sth);
 
-// });
-
-$app->get('/cancel/{bl_id}/{comment}', function (Request $request, Response $response, array $args) {
+$app->get('/ShowReservation/{bl_id}', function (Request $request, Response $response, array $args) {
     $bl_id = $args['bl_id'];
-    $res_comment = $args['comment'];
-    $sql = "SELECT * from reservation_info re
-    join book_log bl
-    on re.resinfo_id = bl.bl_reservation
-    WHERE bl.bl_id = $bl_id";
+    $sql = "select * from book_log bl
+    join reservation_info r
+    on bl.bl_reservation = r.resinfo_id
+    join agency a
+    on r.resinfo_agency = a.agency_id 
+    join rooms rm
+    on bl.bl_room = rm.room_id
+    join room_type rt 
+    on rm.room_type = rt.rtype_id
+    join room_status rs
+    on bl.bl_status = rs.rstatus_id
+    join room_view rv 
+    on rm.room_view = rv.rview_id
+    join building b
+    on rm.room_building = b.building_id
+    join guest_info gi
+    on bl.bl_ginfo = gi.ginfo_id
+    where bl.bl_id = $bl_id";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-    $resinfo_id = ($sth[0]['resinfo_id']);
-    $sql1 = "UPDATE reservation_info 
-    set resinfo_flag = 1
-    WHERE resinfo_id = $resinfo_id";
-    $this->db->query($sql1);
-    $sql2 = "UPDATE reservation_info 
-    set resinfo_comments = '".$res_comment."' where resinfo_id = $resinfo_id ";
-    $this->db->query($sql2);
+    return $this->response->withJson($sth);
 });
 
-$app->get('/guest/{bl_id}/{comment}', function (Request $request, Response $response, array $args) {
+$app->get('/cancel/{bl_id}/{comments}', function (Request $request, Response $response, array $args) {
     $bl_id = $args['bl_id'];
-    $res_comment = $args['comment'];
-    $sql = "SELECT * from guest_info re
-    join book_log bl
-    on re.ginfo_id = bl.bl_ginfo
-    WHERE bl.bl_id = $bl_id";
+    $resinfo_comments = $args['comments'];
+    $sql = "SELECT resinfo_id from reservation_info join book_log on resinfo_id = bl_reservation where bl_id = $bl_id ";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-    $resinfo_id = ($sth[0]['ginfo_id']);
-    $sql1 = "UPDATE guest_info 
-    set ginfo_flag = 1
-    WHERE ginfo_id = $resinfo_id";
+    $resinfo_id = $sth[0]['resinfo_id'];
+    $sql1 = "update reservation_info 
+    set resinfo_comments = '$resinfo_comments' , resinfo_flag= 1
+    where resinfo_id = $resinfo_id ";
     $this->db->query($sql1);
-    $sql2 = "UPDATE guest_info 
-    set ginfo_comment = '".$res_comment."' where ginfo_id = $resinfo_id ";
-    $this->db->query($sql2);
 });
+
+$app->get('/guest/{bl_id}/{comments}', function (Request $request, Response $response, array $args) {
+    $bl_id = $args['bl_id'];
+    $ginfo_comment = $args['comments'];
+    $sql = "SELECT ginfo_id from guest_info join book_log on ginfo_id = bl_ginfo where bl_id = $bl_id ";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    $ginfo_id = $sth[0]['ginfo_id'];
+    $sql1 = "update guest_info
+    set ginfo_comment = '$ginfo_comment' , ginfo_flag= 1
+    where ginfo_id = $ginfo_id ";
+    $this->db->query($sql1);
+});
+$app->run();
+
 // $app->get('/comment/{resinfo_id}/{comment}', function (Request $request, Response $response, array $args) {
 //     $res_comment = $args['comment'];
 //     $resinfo_id = $args['resinfo_id'];
@@ -135,4 +142,4 @@ $app->get('/guest/{bl_id}/{comment}', function (Request $request, Response $resp
 //     return $this->response->withJson($sth);
 // });
 
-$app->run();
+
