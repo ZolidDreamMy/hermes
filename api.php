@@ -109,7 +109,10 @@ $app->get('/guest/{bl_id}/{comments}', function (Request $request, Response $res
     where ginfo_id = $ginfo_id ";
     $this->db->query($sql1);
 });
+
 $app->run();
+//card 16
+
 
 // $app->get('/comment/{resinfo_id}/{comment}', function (Request $request, Response $response, array $args) {
 //     $res_comment = $args['comment'];
