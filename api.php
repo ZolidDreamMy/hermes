@@ -110,8 +110,43 @@ $app->get('/guest/{bl_id}/{comments}', function (Request $request, Response $res
     $this->db->query($sql1);
 });
 
-$app->run();
+
 //card 16
+$app->get('/show_info_checkout/{id}', function (Request $request, Response $response, array $args) {
+//     $bl_id = $args['bl_id'];
+//     $sql = "SELECT * from book_log bl join  reservation_info r
+//     on bl.bl_reservation = r.resinfo_id
+//     join agency a
+//     on r.resinfo_agency = a.agency_id 
+//     join rooms rm
+//     on bl.bl_room = rm.room_id
+//     join room_type rt 
+//     on rm.room_type = rt.rtype_id
+//     join room_status rs
+//     on bl.bl_status = rs.rstatus_id
+//     join room_view rv 
+//     on rm.room_view = rv.rview_id
+//     join building b
+//     on rm.room_building = b.building_id
+//     where bl.bl_id = $bl_id";
+//     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+//     return $this->response->withJson($sth);
+// });
+$bl_id = $args['id'];
+    $sql = "SELECT * FROM reservation_info rs join book_log bl
+    on rs.resinfo_id = bl.bl_reservation join guest_info g
+    on bl.bl_ginfo = g.ginfo_id join rooms r
+    on bl.bl_room = r.room_id join room_type rt
+    on r.room_type = rt.rtype_id join room_view rv
+    on r.room_view = rv.rview_id join building bd
+    on r.room_building = bd.building_id
+    where bl.bl_id = $bl_id ";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $this->response->withJson($sth);
+});
+
+$app->run();
+
 
 
 // $app->get('/comment/{resinfo_id}/{comment}', function (Request $request, Response $response, array $args) {
