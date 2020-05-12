@@ -17,10 +17,10 @@ function btnSearch_Click() {
       // console.log(item);
       line += "<tr>";
       line += "<td > <button type= 'button' class= ' btn-round btn-fill btn-info ' >Info</button> </td>";
-      line += "<td >" + item.resinfo_first_name + "</td>";
+      line += "<td >" + item.ginfo_first_name + "</td>";
       line += "<td >" + item.room_name + "</td>";
-      line += "<td >" + item.resinfo_first_name + "</td>";
-      line += "<td >" + item.resinfo_telno + "</td>";
+      line += "<td >" + item.ginfo_first_name + "</td>";
+      line += "<td >" + item.ginfo_telno + "</td>";
       line += "<td >" + item.agency_name + "</td>";
       line += "<td >" + item.resinfo_bookdate + "</td>";
       line += "</tr>";

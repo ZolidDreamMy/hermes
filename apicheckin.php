@@ -47,12 +47,12 @@ $container['db'] = function ($c) {
 
 
 $app->get('/getdb', function (Request $request, Response $response, array $args) {
-    $sql = "SELECT b.bl_id,g.ginfo_id,g.ginfo_first_name,r.room_name,a.agency_name,re.resinfo_telno,b.bl_checkin,re.resinfo_bookdate,re.resinfo_first_name
+    $sql = "SELECT *
     FROM rooms r join book_log b on r.room_id=b.bl_room 
     join reservation_info re on b.bl_reservation = re.resinfo_id
     join agency a on re.resinfo_agency=a.agency_id 
     join guest_info g on b.bl_ginfo = g.ginfo_id
-    group by b.bl_id,re.resinfo_first_name,r.room_name,a.agency_name,re.resinfo_telno,b.bl_checkin,re.resinfo_bookdate,g.ginfo_id,g.ginfo_first_name";
+    -- group by b.bl_id,re.resinfo_first_name,r.room_name,a.agency_name,re.resinfo_telno,b.bl_checkin,re.resinfo_bookdate,g.ginfo_id,g.ginfo_first_name";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $this->response->withJson($sth);
 });
