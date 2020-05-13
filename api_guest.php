@@ -60,7 +60,7 @@
 //     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 //     return $this->response->withJson($sth);
-});
+// });
 // $app->get('/ShowReservation', function (Request $request, Response $response, array $args){
 //     $id = $args['resinfo_id'];
 //     $sql = "SELECT * FROM hermes.reservation_info ";
