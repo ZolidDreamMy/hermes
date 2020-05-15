@@ -17,6 +17,7 @@
       <link href="<?php echo base_url("/assets/css/light-bootstrap-dashboard.css?v=2.0.0 ")?>" rel="stylesheet" />
       <!-- CSS Just for demo purpose, don't include it in your project -->
       <link href="<?php echo base_url("/assets/css/demo.css" )?>" rel="stylesheet" />
+      <!-- <script src="<?php echo base_url('/assets/js/jquery-3.5.0.min.js')?>"></script> -->
       <link href="<?php echo base_url("/assets/DataTables-1.10.20/media/css/jquery.dataTables.css")?>" rel="stylesheet" />
       <style>
          .colordate {
@@ -159,6 +160,7 @@
          </nav>
          <!-- End Navbar -->
          <div class="content">
+         <form id="update_form_edit" method="POST">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-12">
@@ -171,13 +173,23 @@
                               <button type="button" id="" class="btn btn-danger btn-round"><i class="fa fa-pencil-square-o"></i> Room</button>
                               <button type="button" id="" class="btn btn-info btn-round"><i class="fa fa-times"></i> Close</button>
                            </div>
-                           <hr>
+                           <hr/>
                            <div class="row">
                                 <div class="col-md-12">
-                                    <h5>Stay date: 2018-09-09 to 2018-09-10 Book date : 2018-09-09 07:31:30 by Chanankorn agency : Jandaeng phone : 087-887519</h5>
-                                    <h5>Room : R101 Type:Standard Room Building:No Specific Views:No Specific</h5>
-                                    <br>
-                                </div>   
+                                <div class="fixposition">
+                                    <strong>Stay date : </strong><span id="show_checkin"></span><strong> to </strong>
+                                    <span id="show_checkout"></span>
+                                    <strong> Book Date : </strong><span id="show_bookdate"></span>
+                                    <strong> By : </strong><span id="show_fname"></span>
+                                    <strong> Agency : </strong><span id="show_lname"></span>
+                                    <strong> Phone : </strong><span id="show_phone"></span><br>
+                                    <strong> Room : </strong><span id="show_room"></span>
+                                    <strong> Type : </strong><span id="show_type"></span>
+                                    <strong> Building : </strong><span id="show_building"></span>
+                                    <strong> Views : </strong><span id="show_views"></span>
+                                </div>
+                                </div> 
+                                <hr/>
                               <div class="col-md-6">
                                  <label class="mr-sm-2" for="inlineFormCustomSelect">Show</label>
                                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
@@ -195,26 +207,8 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="row">
-                              <div class="col-md-6">
-                                 <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Show</label>
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                                        <option selected>10</option>
-                                        <option value="1">20</option>
-                                        <option value="2">50</option>
-                                        <option value="3">100</option>
-                                    </select>
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">entries</label> -->
-                              </div>
-                              <div class="col-md-5">
-                                 <!-- <div class="input-group mb-3">
-                                    <label for="example-text-input" class="col-sm-3 col-form-label">Search:</label>
-                                    <input type="text" class="form-control" placeholder="Search" id="keyword" value="">
-                                    <button type="button" class="btn btn-round btn-fill btn-info" id="btnSearch">Search</button>
-                                    </div> -->
-                              </div>
-                           </div>
                         </div>
+
                         <div class="row">
                            <div class="col-md-12">
                               <div class="card-body table-full-width table-responsive">
@@ -230,12 +224,12 @@
                                     </thead>
                                     <tbody>
                                        <td><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
-                                       <td>Chanankorn</td>
-                                       <td>Jandaeng</td>
-                                       <td>N/A</td>
-                                       <td>N/A</td>
-                                       <td>087-887519</td>
-                                       <td>waiting</td>
+                                       <td id="fname_edit_infoguest"></td>
+                                       <td id="lname_edit_infoguest"></td>
+                                       <td id="sex_edit_infoguest"></td>
+                                       <td id="fname_edit_infoguest"></td>
+                                       <td id="phone_edit_infoguest"></td>
+                                       <td id="fname_edit_infoguest"></td>
                                     </tbody>
                                  </table>
                                  <div class="row">
@@ -253,9 +247,7 @@
 
 
                             </div>
-                              </div>
-
-                              
+                              </div>     
                            </div>
                         </div>
                         </>
@@ -263,16 +255,26 @@
                   </div>
                </div>
             </div>
-         </div>
+         </form>
       </div>
    </body>
    <!--   Core JS Files   -->
-<script src="<?php echo base_url("/assets/js/core/jquery.3.2.1.min.js") ?>" type="text/javascript"></script>
-<script src="<?php echo base_url("/assets/js/core/popper.min.js") ?>" type="text/javascript"></script>
-<script src="<?php echo base_url("/assets/js/core/bootstrap.min.js") ?>" type="text/javascript"></script>
-<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-<script src="<?php echo base_url("/assets/js/light-bootstrap-dashboard.js?v=2.0.0") ?>" type="text/javascript"></script>
-<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?php echo base_url("/assets/js/demo.js") ?>"></script>
+   <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/core/bootstrap.min.js')?>" type="text/javascript"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js')?>"></script>
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!--  Chartist Plugin  -->
+    <script src="<?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
+    <!--  Notifications Plugin    -->
+    <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
+    <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+    <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0')?> " type="text/javascript"></script>
+    <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+    <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
+   <script src="<?php echo base_url('application/show_info_checkinedit.js')?>"></script>
+
 </script>
 </html>
