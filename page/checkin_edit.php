@@ -227,9 +227,9 @@
                                        <td id="fname_edit_infoguest"></td>
                                        <td id="lname_edit_infoguest"></td>
                                        <td id="sex_edit_infoguest"></td>
-                                       <td id="fname_edit_infoguest"></td>
+                                       <td id="nation_edit_infoguest"></td>
                                        <td id="phone_edit_infoguest"></td>
-                                       <td id="fname_edit_infoguest"></td>
+                                       <td id="badd_edit_infoguest"></td>
                                     </tbody>
                                  </table>
                                  <div class="row">
@@ -275,6 +275,7 @@
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
    <script src="<?php echo base_url('application/show_info_checkinedit.js')?>"></script>
+   <script src=<?php echo base_url("/application/Search.js") ?>></script>
 
 </script>
 </html>
