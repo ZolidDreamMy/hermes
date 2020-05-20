@@ -38,8 +38,9 @@ $.getJSON(urlAPI).done(function (data) {
   $("#tb1").append(line);
 
   $('#datatable1').DataTable({
-    "pageLength": 50,
-    "autoWidth": true
+    "pageLength": 25,
+    "autoWidth": true,
+    "searching": true
   });
 });
 
