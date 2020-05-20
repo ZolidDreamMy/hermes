@@ -41,18 +41,51 @@ function show_info_editcheckin() {
         console.log(data);
         $("#fname_edit_infoguest").text(data["0"]["ginfo_first_name"]);
         $("#lname_edit_infoguest").text(data["0"]["ginfo_last_name"]);
-        // $("#passport_edit_infoguest").text(data["0"]["ginfo_passport_id"]);
         $("#phone_edit_infoguest").text(data["0"]["ginfo_telno"]);
-        // $("#bd_edit_infoguest").text(data["0"]["ginfo_birthday"]);
         $("#nation_edit_infoguest").text(data["0"]["ginfo_nation"]);
-        // $("#email_edit_infoguest").text(data["0"]["ginfo_email"]);
-        $("#sex_edit_infoguest").text(data["0"]["ginfo_sex"]);
-        // $("#room_price_edit_infoguest").text(data["0"]["bl_price"]);
-        // $("#padd_edit_infoguest").text(data["0"]["ginfo_mail_addr"]);
-        $("#badd_edit_infoguest").text(data["0"]["bl_status"]);
-        // $("#sex_edit_infoguest").text(data["0"]["ginfo_sex"]);
-        // $("#incbreakfast_edit_infoguest").text(data["0"]["bl_incbreakfast"]);
-        // $("#breakfast_edit_infoguest").text(data["0"]["bl_breakfast"]);
+
+            switch(data["0"]["ginfo_sex"]){
+                case "0":
+                    $("#sex_edit_infoguest").text("N/A");
+                    break;
+                case "1":
+                    $("#sex_edit_infoguest").text("ชาย");
+                    break;
+                case "2":
+                    $("#sex_edit_infoguest").text("หญิง");
+                    break;    
+            };
+            
+            switch(data["0"]["bl_status"]){
+                case "0":
+                    $("#badd_edit_infoguest").text("No Specific");
+                    break;
+                case "1":
+                    $("#badd_edit_infoguest").text("Avaliable");
+                    break;
+                case "2":
+                    $("#badd_edit_infoguest").text("Vacant");
+                    break;
+                case "3":
+                    $("#badd_edit_infoguest").text("Occupy");
+                    break;
+                case "4":
+                    $("#badd_edit_infoguest").text("Dirty");
+                    break;
+                case "5":
+                    $("#badd_edit_infoguest").text("OOO");
+                    break;
+                case "6":
+                    $("#badd_edit_infoguest").text("House Use");
+                    break;
+                case "7":
+                    $("#badd_edit_infoguest").text("Block");
+                    break;
+                case "8":
+                    $("#badd_edit_infoguest").text("Reserved");
+                    break;   
+                     
+            };
     })
 
 }
