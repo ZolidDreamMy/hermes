@@ -12,7 +12,7 @@ $config = [
             "host" => "127.0.0.1",
             "dbname" => "hermes",
             "user" => "root",
-            "pass" => "usbw"
+            "pass" => ""
         ],
     ],
 ];
@@ -165,6 +165,46 @@ $app->post('/save_edit_checkout', function (Request $request, Response $response
 });
 //card16
  
+//card 23
+$app->get('/add_agency/{code}/{name}/{address}/{sales}/{email}/{tel}/{commission}/{comment}', function (Request $request, Response $response, array $args) {
+    
+   $code = $args['code'];
+   $name = $args['name'];
+   $address = $args['address'];
+   $sales = $args['sales'];
+   $email = $args['email'];
+   $tel = $args['tel'];
+   $commission = $args['commission'];
+   $comment = $args['comment'];
+  
+
+    $sql = "INSERT INTO agency (agency_code, agency_name, agency_address ,agency_contact_name, agency_email ,agency_telno , agency_price, agency_comment)
+    VALUES ($code,'$name','$address', '$sales','$email','$tel','$commission','$comment')";
+    $this->db->query($sql);
+    // return $this->response->withJson($sth);
+    // try {
+    //     $this->db->query($sql);
+    //     return $this->response->withJson(array('message' => 'success'));
+    // } catch (PDOException $e) {
+    //     return $this->response->withJson(array('message' => 'false'));
+    // }
+});
+
+//Pai GROUP 1
+$app->get('/editfood/{key}/{include}/{break}/{price}', function (Request $request, Response $response, array $args) {
+    $id = $args['key'];
+    $price = $args['price']; 
+    $include = $args['include']; 
+    $break = $args['break']; 
+    $sql = "UPDATE book_log 
+    SET
+    bl_price = '".$price."' ,
+    bl_incbreakfast = $include,
+    bl_breakfast = '".$break."'
+    WHERE bl_id = $id";
+    $this->db->query($sql);
+   });
+
 //grad 9 checkinedit
 $app->get('/show_info_checkinedit/{id}', function (Request $request, Response $response, array $args) {
     $bl_id = $args['id'];

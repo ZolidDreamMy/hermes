@@ -39,6 +39,8 @@ function show_info_editcheckin() {
 
     .done(function(data) {
         console.log(data);
+        // var sex = data["ginfo_sex"];
+        // console.log(sex);
         $("#fname_edit_infoguest").text(data["0"]["ginfo_first_name"]);
         $("#lname_edit_infoguest").text(data["0"]["ginfo_last_name"]);
         $("#phone_edit_infoguest").text(data["0"]["ginfo_telno"]);

@@ -160,7 +160,7 @@
                     <form id="update_form_edit" method="POST">
                         <div class="card">
                         <div class="">
-                                <div class="col-md-12 text-right">
+                                <div class="col-md-12 text-right mt-2">
                                 <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
                                 <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
                                 <button type="button" id="" class="btn btn-warning btn-round">Print</button>
@@ -269,9 +269,9 @@
                                         <div class="col-md-3">
                                             <label for="">Breakfast : </label>
                                             <select class="form-control" id="breakfast_edit_infoguest" name="breakfast_edit_infoguest">
-                                                <option value=" N/A  ">N/A</option>
-                                                <option value="1">set1</option>
-                                                <option value="2">set2</option>
+                                                <option value="N/A">N/A</option>
+                                                <option value="set1">set1</option>
+                                                <option value="set2">set2</option>
                                             </select>
                                         </div>
                                         <div class="col-md-3">
