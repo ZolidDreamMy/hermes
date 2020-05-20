@@ -167,7 +167,7 @@
                      <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                            <div class="col-md-12 text-right">
-                              <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
+                           <button onclick="window.location.href='checkin.php';"type="button" id="btncheckin" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
                               <?php $id = intval($_GET['id']); ?>
                               <iframe style ="display: none" src="<?php echo base_url("/page/regisPrint.php?gid=$id ")?>" name="frame1"></iframe>
                               <button  type="button" id="printButton" class="btn btn-warning btn-round" value="print!" onclick="frames['frame1'].print()"><i class="fa fa-print"></i>Print</button>

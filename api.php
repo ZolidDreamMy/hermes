@@ -244,6 +244,13 @@ $app->get('/getdb/{id}', function (Request $request, Response $response, array $
 });
 //grad 9 checkinedit
 
+// GROUP 1
+$app->get('/checkin/{key}', function (Request $request, Response $response, array $args) {
+    $id = $args['key'];
+    $sql = "UPDATE book_log SET bl_status = 3 WHERE bl_id = $id ";
+    $this->db->query($sql);
+});
+
 // GROUP5 //
 $app->get('/printCheckin/{idcheck}', function (Request $request, Response $response, array $args) {
     $id = $args['idcheck'];
