@@ -179,10 +179,10 @@
                              <div class="row">
                                  <div class="col-md-8"><h4 class="card-title">Agency</h4> <label >add,delete and edit agency information</label></div>
                                  <div class="col-md-4 text-right">
-                                        <button type="button" id="" class="btn btn-outline-warning">Delete</button>
-                                        <button type="button" id="" class="btn btn-outline-danger"> Reguest C/O</button> 
-                                        <button type="submit" class="btn btn-outline btn-success" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
-                                        <button type="button" class="btn btn-outline  btn-info"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
+                                        <button type="button" id="" class="btn btn-danger btn-round">Delete</button>
+                                        <button type="button" id="" class="btn btn-warning btn-round"> Reguest C/O</button> 
+                                        <button type="submit" class="btn btn-success btn-round" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
+                                        <button type="button" class="btn btn-info btn-round"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
                              </div>
                          </div>
                          <div class="card-body">

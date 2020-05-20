@@ -215,7 +215,7 @@ $app->get('/show_info_checkinedit/{id}', function (Request $request, Response $r
         on r.room_type = rt.rtype_id join room_view rv
         on r.room_view = rv.rview_id join building bd
         on r.room_building = bd.building_id
-        where bl.bl_id = $bl_id ";
+        where g.ginfo_id = $bl_id ";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $this->response->withJson($sth);
 });

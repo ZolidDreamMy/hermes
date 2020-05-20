@@ -160,7 +160,7 @@
                     <form id="update_form_edit" method="POST">
                         <div class="card">
                         <div class="">
-                                <div class="col-md-12 text-right mt-2">
+                                <div class="col-md-12 text-right mt-3 ">
                                 <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
                                 <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
                                 <button type="button" id="" class="btn btn-warning btn-round">Print</button>
@@ -171,10 +171,10 @@
                                     <hr>
                                     <div class="row">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-10">
                                         <h4 class="mt-4 fixposition"> INFORMATION <strong> :</strong> <span id="show_fname"></span> <span id="show_lname"></span></h3>
                                         </div>
-                                        <div class="col-md-3 mt-3">
+                                        <div class="col-md-2 mt-3">
                                             <button type="submit" data-toggle="modal" id="save_edit_infoguest" data-target="#exampleModal" class="btn btn-primary btn-round ">Save</button>
 
                                             <!-- Button trigger modal -->

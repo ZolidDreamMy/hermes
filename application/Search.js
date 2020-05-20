@@ -24,7 +24,7 @@ $.getJSON(urlAPI).done(function (data) {
   $.each(data, function (k, item) {
     // console.log(item);
     line += "<tr>";
-    line += "<td > <a href = http://localhost/hermes/page/checkin_edit.php?id="+item.bl_id+" ><button type= 'button' class= '  btn btn-info btn-sm btn-round ' id='load_checkin'>Info</button></a> </td>";
+    line += "<td > <a href = http://localhost/hermes/page/checkin_edit.php?id="+item.ginfo_id+" ><button type= 'button' class= '  btn btn-info btn-sm btn-round ' id='load_checkin'>Info</button></a> </td>";
     line += "<td >" + item.ginfo_first_name + "</td>";
     line += "<td >" + item.room_name + "</td>";
     line += "<td >" + item.ginfo_first_name + "</td>";
@@ -38,8 +38,9 @@ $.getJSON(urlAPI).done(function (data) {
   $("#tb1").append(line);
 
   $('#datatable1').DataTable({
-    "pageLength": 50,
-    "autoWidth": true
+
+    "autoWidth": true,
+    "searching": true
   });
 });
 
