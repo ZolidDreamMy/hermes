@@ -167,7 +167,7 @@
                      <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                            <div class="col-md-12 text-right">
-                              <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
+                              <button onclick="window.location.href='checkin.php';"type="button" id="btncheckin" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
                               <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-print"></i>Print</button>
                               <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-plus"></i>Guest</button>
                               <button type="button" id="" class="btn btn-danger btn-round"><i class="fa fa-pencil-square-o"></i> Room</button>

@@ -1,7 +1,21 @@
 $(() => {
     show_info_checkin();
     show_info_editcheckin();
+    $("#btncheckin").click(checkin);
 });
+
+
+function checkin(){
+    var query = window.location.search.substring(1);
+    var vars = query.split("=");
+    var ID = vars[1]
+    var urlAPI = base_url("api.php/checkin/" + ID);
+    $.getJSON(urlAPI, { format: "json" }).done(function (data) {
+    });
+    // $("#bl_checkin").hide();
+    alert("OK");
+    }
+
 
 function show_info_checkin() {
     var query = window.location.search.substring(1);

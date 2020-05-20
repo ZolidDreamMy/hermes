@@ -204,5 +204,12 @@ $app->get('/show_info_checkinedit/{id}', function (Request $request, Response $r
     });
    //grad 9 checkinedit
  
+// GROUP 1
+    $app->get('/checkin/{key}', function (Request $request, Response $response, array $args) {
+        $id = $args['key']; 
+        $sql = "UPDATE book_log SET bl_status = 3 WHERE bl_id = $id ";
+        $this->db->query($sql);
+    });
+
 
 $app->run();
