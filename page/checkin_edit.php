@@ -168,7 +168,9 @@
                         <div class="card-header ">
                            <div class="col-md-12 text-right">
                               <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
-                              <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-print"></i>Print</button>
+                              <?php $id = intval($_GET['id']); ?>
+                              <iframe style ="display: none" src="<?php echo base_url("/page/regisPrint.php?gid=$id ")?>" name="frame1"></iframe>
+                              <button  type="button" id="printButton" class="btn btn-warning btn-round" value="print!" onclick="frames['frame1'].print()"><i class="fa fa-print"></i>Print</button>
                               <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-plus"></i>Guest</button>
                               <button type="button" id="" class="btn btn-danger btn-round"><i class="fa fa-pencil-square-o"></i> Room</button>
                               <button type="button" id="" class="btn btn-info btn-round"><i class="fa fa-times"></i> Close</button>
@@ -276,6 +278,8 @@
     <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
    <script src="<?php echo base_url('application/show_info_checkinedit.js')?>"></script>
    <script src=<?php echo base_url("/application/Search.js") ?>></script>
+   <script src=<?php echo base_url("/application/print_register.js") ?>></script>
+   
 
 </script>
 </html>
