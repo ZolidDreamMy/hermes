@@ -49,41 +49,17 @@ function show_info_editcheckin() {
                     $("#sex_edit_infoguest").text("N/A");
                     break;
                 case "1":
-                    $("#sex_edit_infoguest").text("ชาย");
+                    $("#sex_edit_infoguest").text("Male");
                     break;
                 case "2":
-                    $("#sex_edit_infoguest").text("หญิง");
+                    $("#sex_edit_infoguest").text("Female");
                     break;    
             };
             
-            switch(data["0"]["bl_status"]){
+            switch(data["0"]["ginfo_status"]){
                 case "0":
-                    $("#badd_edit_infoguest").text("No Specific");
-                    break;
-                case "1":
-                    $("#badd_edit_infoguest").text("Avaliable");
-                    break;
-                case "2":
-                    $("#badd_edit_infoguest").text("Vacant");
-                    break;
-                case "3":
-                    $("#badd_edit_infoguest").text("Occupy");
-                    break;
-                case "4":
-                    $("#badd_edit_infoguest").text("Dirty");
-                    break;
-                case "5":
-                    $("#badd_edit_infoguest").text("OOO");
-                    break;
-                case "6":
-                    $("#badd_edit_infoguest").text("House Use");
-                    break;
-                case "7":
-                    $("#badd_edit_infoguest").text("Block");
-                    break;
-                case "8":
-                    $("#badd_edit_infoguest").text("Reserved");
-                    break;   
+                    $("#badd_edit_infoguest").text("waiting");
+                    break; 
                      
             };
     })
