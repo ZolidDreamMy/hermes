@@ -75,6 +75,21 @@ function update_editinfoguest_checkout() {
                     $("#modal_alert").modal("show");
                 }
             });
+
+            // GROUP 1 //
+            var query = window.location.search.substring(1);
+            var vars = query.split("=");
+            var ID = vars[1];
+            var include = $("#incbreakfast_edit_infoguest").val();
+            var breakfast = $("#breakfast_edit_infoguest").val();
+            var price = $("#room_price_edit_infoguest").val();
+            // alert(ID+breakfast+include+price);
+            var urlAPI = "http://localhost/hermes/api.php/editfood/" + ID + "/" + include + "/" + breakfast + "/" + price;
+            $.getJSON(urlAPI, { format: "json" }).done(function () {
+            });
+            // GROUP 1 //
+
+
         });
         console.log("3");
         e.preventDefault();

@@ -181,7 +181,7 @@
                                  <div class="col-md-4 text-right">
                                         <button type="button" id="" class="btn btn-outline-warning">Delete</button>
                                         <button type="button" id="" class="btn btn-outline-danger"> Reguest C/O</button> 
-                                        <button type="button" class="btn btn-outline btn-success"><i class="nc-icon nc-simple-add"></i> Save</button> 
+                                        <button type="submit" class="btn btn-outline btn-success" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
                                         <button type="button" class="btn btn-outline  btn-info"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
                              </div>
                          </div>
@@ -199,7 +199,7 @@
                                      <div class="form-group">
                                          <div class="form-group">
                                              <label>Code</label>
-                                             <input type="text" class="form-control"  value="">
+                                             <input type="text" class="form-control" id="code_agency"  value="" require>
                                          </div>
                                      </div>
                                  </div>
@@ -207,116 +207,15 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>Agency name</label>
-                                            <input type="text" class="form-control"  value="">
+                                            <input type="text" class="form-control" id="name_agency"  value="" require>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Commission(%)</label>
-                                        <select  class="custom-select">
-                                            <option>0.0</option>
-                                            <option>1.0</option>
-                                            <option>2.0</option>
-                                            <option>3.0</option>
-                                            <option>4.0</option>
-                                            <option>5.0</option>
-                                            <option>6.0</option>
-                                            <option>7.0</option>
-                                            <option>8.0</option>
-                                            <option>9.0</option>
-                                            <option>10.0</option>
-                                            <option>11.0</option>
-                                            <option>12.0</option>
-                                            <option>13.0</option>
-                                            <option>14.0</option>
-                                            <option>15.0</option>
-                                            <option>16.0</option>
-                                            <option>17.0</option>
-                                            <option>18.0</option>
-                                            <option>19.0</option>
-                                            <option>20.0</option>
-                                            <option>21.0</option>
-                                            <option>22.0</option>
-                                            <option>23.0</option>
-                                            <option>24.0</option>
-                                            <option>25.0</option>
-                                            <option>26.0</option>
-                                            <option>27.0</option>
-                                            <option>28.0</option>
-                                            <option>29.0</option>
-                                            <option>30.0</option>
-                                            <option>31.0</option>
-                                            <option>32.0</option>
-                                            <option>33.0</option>
-                                            <option>34.0</option>
-                                            <option>35.0</option>
-                                            <option>36.0</option>
-                                            <option>37.0</option>
-                                            <option>38.0</option>
-                                            <option>39.0</option>
-                                            <option>40.0</option>
-                                            <option>41.0</option>
-                                            <option>42.0</option>
-                                            <option>43.0</option>
-                                            <option>44.0</option>
-                                            <option>45.0</option>
-                                            <option>46.0</option>
-                                            <option>47.0</option>
-                                            <option>48.0</option>
-                                            <option>49.0</option>
-                                            <option>50.0</option>
-                                            <option>51.0</option>
-                                            <option>52.0</option>
-                                            <option>53.0</option>
-                                            <option>54.0</option>
-                                            <option>55.0</option>
-                                            <option>56.0</option>
-                                            <option>57.0</option>
-                                            <option>58.0</option>
-                                            <option>59.0</option>
-                                            <option>60.0</option>
-                                            <option>61.0</option>
-                                            <option>62.0</option>
-                                            <option>63.0</option>
-                                            <option>64.0</option>
-                                            <option>65.0</option>
-                                            <option>66.0</option>
-                                            <option>67.0</option>
-                                            <option>68.0</option>
-                                            <option>69.0</option>
-                                            <option>70.0</option>
-                                            <option>71.0</option>
-                                            <option>72.0</option>
-                                            <option>73.0</option>
-                                            <option>74.0</option>
-                                            <option>75.0</option>
-                                            <option>76.0</option>
-                                            <option>77.0</option>
-                                            <option>78.0</option>
-                                            <option>79.0</option>
-                                            <option>80.0</option>
-                                            <option>81.0</option>
-                                            <option>82.0</option>
-                                            <option>83.0</option>
-                                            <option>84.0</option>
-                                            <option>85.0</option>
-                                            <option>86.0</option>
-                                            <option>87.0</option>
-                                            <option>88.0</option>
-                                            <option>89.0</option>
-                                            <option>90.0</option>
-                                            <option>91.0</option>
-                                            <option>92.0</option>
-                                            <option>93.0</option>
-                                            <option>94.0</option>
-                                            <option>95.0</option>
-                                            <option>96.0</option>
-                                            <option>97.0</option>
-                                            <option>98.0</option>
-                                            <option>99.0</option>
-                                            <option>100.0</option>
-                                        </select>
+                                        <input type="number" id="commission_agency" class="form-control" require>
+                                            
                                       </div>
                                 </div>
                              </div>
@@ -324,19 +223,19 @@
                                  <div class="col-md-6">
                                      <div class="form-group">
                                          <label>Sales Name</label>
-                                         <input type="text" class="form-control" >
+                                         <input type="text" class="form-control" id="sales_name_agency"   require>
                                      </div>
                                  </div>
                                  <div class="col-md-3">
                                      <div class="form-group">
                                          <label>Email</label>
-                                         <input type="text" class="form-control" >
+                                         <input type="email" class="form-control" id="email_agency"   require>
                                      </div>
                                  </div>
                                  <div class="col-md-3">
                                      <div class="form-group">
-                                         <label>#Telephone</label>
-                                         <input type="email" class="form-control" >
+                                         <label>Telephone</label>
+                                         <input type="text" class="form-control" id="tel_agency"   require>
                                      </div>
                                  </div>
                              </div>
@@ -344,13 +243,13 @@
                                  <div class="col-md-6">
                                      <div class="form-group">
                                          <label>Address</label>
-                                         <input type="tel" class="form-control" >
+                                         <input type="text" class="form-control" id="address_agency"  require>
                                      </div>
                                  </div>
                                  <div class="col-md-6">
                                      <div class="form-group">
                                          <label>Comment</label>
-                                         <textarea class="form-control"></textarea>
+                                         <textarea class="form-control" id="comment_agency"   require></textarea>
                                      </div>
                                  </div>
                              </div>
@@ -416,5 +315,7 @@
  <script src=<?php echo base_url("/assets/js/light-bootstrap-dashboard.js?v=2.0.0")?> type="text/javascript"></script>
  <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
  <script src=<?php echo base_url("/assets/js/demo.js")?>></script>
+ <script src=<?php echo base_url("/application/add_agency.js")?>></script>
+
  
  </html>

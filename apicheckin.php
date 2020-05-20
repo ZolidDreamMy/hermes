@@ -11,7 +11,7 @@ $config=[
         "host" => "127.0.0.1",
         "dbname" => "hermes",
         "user" => "root",
-        "pass" => "usbw"
+        "pass" => ""
         ],
     ],
 ];

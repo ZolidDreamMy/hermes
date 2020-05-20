@@ -38,7 +38,8 @@ $.getJSON(urlAPI).done(function (data) {
   $("#tb1").append(line);
 
   $('#datatable1').DataTable({
-    responsive: true  
+    "pageLength": 50,
+    "autoWidth": true
   });
 });
 
