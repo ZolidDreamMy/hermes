@@ -42,8 +42,8 @@ function show_info_editcheckout() {
         $("#sex_edit_infoguest").val(data["0"]["ginfo_sex"]);
         $("#room_price_edit_infoguest").val(data["0"]["bl_price"]);
         $("#padd_edit_infoguest").val(data["0"]["ginfo_mail_addr"]);
-        $("#badd_edit_infoguest").val(data["0"]["ginfo_comment"]);
-        $("#sex_edit_infoguest").val(data["0"]["ginfo_sex"]);
+        $("#badd_edit_infoguest").val(data["0"]["ginfo_bill_addr"]);
+        $("#note_edit_infoguest").val(data["0"]["ginfo_comment"]);
         $("#incbreakfast_edit_infoguest").val(data["0"]["bl_incbreakfast"]);
         $("#breakfast_edit_infoguest").val(data["0"]["bl_breakfast"]);
     })

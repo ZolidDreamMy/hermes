@@ -20,6 +20,7 @@ $(() => {
             console.log("4");
             if (response["message"] == "success") {
                 $("#modal_alert").modal("show");
+                setTimeout(reload, 800);
             }
         });
         console.log("3");

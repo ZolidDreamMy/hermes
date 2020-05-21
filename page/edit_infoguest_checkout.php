@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png') ?>" />
-    <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.ico')?>" />
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.ico') ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
         Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim
@@ -16,11 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet" />
-    <link href="<?php echo base_url('assets/css/light-bootstrap-dashboard.css?v=2.0.0')?> " rel="stylesheet" />
+    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/css/light-bootstrap-dashboard.css?v=2.0.0') ?> " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="<?php echo base_url('assets/css/demo.css" rel="stylesheet')?>" />
-    <script src="<?php echo base_url('assets/js/jquery-3.5.0.min.js')?>"></script>
+    <link href="<?php echo base_url('assets/css/demo.css" rel="stylesheet') ?>" />
+    <script src="<?php echo base_url('assets/js/jquery-3.5.0.min.js') ?>"></script>
 </head>
 
 <body>
@@ -156,23 +156,24 @@
                 <!-- End Navbar -->
                 <!-- Start edit_infoguest -->
                 <div class="content">
-
+                    <?php $rec_bl_id = $_GET['id'] ?>
                     <form id="update_form_edit" method="POST">
                         <div class="card">
-                        <div class="">
+                            <div class="">
                                 <div class="col-md-12 text-right mt-3 ">
-                                <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
-                                <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
-                                <button type="button" id="" class="btn btn-warning btn-round">Print</button>
-                                <button type="submit" id="" class="btn btn-info btn-round ">Close</button>
-                                
-                            </div>
+                                <iframe style ="display: none" src="<?php echo base_url("/page/printInhouse.php?rec_bl_id=".$rec_bl_id)?>" name="frame1"></iframe>
+                                    <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
+                                    <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
+                                    <button type="button" id="btn_print" class="btn btn-warning btn-round" onclick="frames['frame1'].print()">Print</button>
+                                    <button type="submit" id="" class="btn btn-info btn-round ">Close</button>
+
+                                </div>
                                 <div class="card-head">
                                     <hr>
                                     <div class="row">
 
                                         <div class="col-md-10">
-                                        <h4 class="mt-4 fixposition"> INFORMATION <strong> :</strong> <span id="show_fname"></span> <span id="show_lname"></span></h3>
+                                            <h4 class="mt-4 fixposition"> INFORMATION <strong> :</strong> <span id="show_fname"></span> <span id="show_lname"></span></h3>
                                         </div>
                                         <div class="col-md-2 mt-3">
                                             <button type="submit" data-toggle="modal" id="save_edit_infoguest" data-target="#exampleModal" class="btn btn-primary btn-round ">Save</button>
@@ -187,7 +188,7 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        
+
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                             <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_yes_update">Save</button>
@@ -197,7 +198,7 @@
                                             </div>
 
                                             <button type="submit" id="cancel_edit_infoguest" class="btn btn-info btn-round ">Cancel</button>
-                                <input type="text" name="id_bl_update" id="id_bl_update" style="display:none;">
+                                            <input type="text" name="id_bl_update" id="id_bl_update" style="display:none;">
                                             <!-- ALERT BOX SUCCESS -->
                                             <div id="modal_alert" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">
@@ -337,28 +338,23 @@
         }
     </style>
     <!--   Core JS Files   -->
-    <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js')?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/js/core/bootstrap.min.js')?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js') ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/core/bootstrap.min.js') ?>" type="text/javascript"></script>
     <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-    <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js') ?>"></script>
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!--  Chartist Plugin  -->
-    <script src="<?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/plugins/chartist.min.js') ?>"></script>
     <!--  Notifications Plugin    -->
-    <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js') ?>"></script>
     <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-    <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0')?> " type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0') ?> " type="text/javascript"></script>
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-    <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
-  
-    <script src="<?php echo base_url('application/save_checkout.js')?>"></script>
-    <script src="<?php echo base_url('application/edit_infoguest_checkout.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/demo.js') ?>"></script>
+
+    <script src="<?php echo base_url('application/save_checkout.js') ?>"></script>
+    <script src="<?php echo base_url('application/edit_infoguest_checkout.js') ?>"></script>
+
 </html>
-
-
-
-
-
-    

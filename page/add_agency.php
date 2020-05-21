@@ -214,7 +214,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Commission(%)</label>
-                                        <input type="number" id="commission_agency" class="form-control" require>
+                                        <input type="number" min="0" id="commission_agency" class="form-control" require>
                                             
                                       </div>
                                 </div>
