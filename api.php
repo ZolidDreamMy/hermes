@@ -119,7 +119,7 @@ $app->post('/update_checkout', function (Request $request, Response $response, a
     $bl_incbreakfast = $params['incbreakfast_edit_infoguest'];
     $bl_breakfast = $params['breakfast_edit_infoguest'];
     $ginfo_bill_address = $params['badd_edit_infoguest'];
-    $ginfo_name_bill= $ginfo_first_name." ".$ginfo_last_name;
+    $ginfo_name_bill = $ginfo_first_name . " " . $ginfo_last_name;
     try {
         $sql = "SELECT g.ginfo_id from guest_info g 
         join book_log bl
@@ -276,6 +276,47 @@ $app->get('/printCheckin/{idcheck}', function (Request $request, Response $respo
     return $this->response->withJson($sth);
 });
 
+$app->get('/printReceipt/{idcheck}', function (Request $request, Response $response, array $args) {
+    $id = $args['idcheck'];
+    $sql = "SELECT * from receipt rec 
+    join book_log bl on rec.rec_bl_id = bl.bl_id
+    join guest_info gin on bl.bl_ginfo = gin.ginfo_id
+    where rec_bl_id = $id order by rec_no desc limit 1";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+    return $this->response->withJson($sth);
+});
+$app->post('/saveReceipt', function (Request $request, Response $response, array $args) {
+    $params = $_POST;
+    $rec_bl_id = intval($params['rec_bl_id']);
+
+    $sql = "Select * from book_log bl join guest_info gin on bl.bl_ginfo = gin.ginfo_id join rooms r on bl.bl_room = r.room_id
+    where bl_id = $rec_bl_id order by bl_id desc limit 1";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    $rec_name_bill = $sth[0]['ginfo_name_bill'];
+    $ginfo_bill_addr = $sth[0]['ginfo_bill_addr'];
+    $ginfo_tax_id = " ";
+    $room_name = $sth[0]['room_name'];
+    $rec_checkin = $sth[0]['ginfo_in'];
+    $rec_checkout = $sth[0]['ginfo_out'];
+    $rec_night = intval($sth[0]['ginfo_night']);
+    $rec_price = doubleval($sth[0]['bl_price']);
+    $ginfo_name_bill = $sth[0]['ginfo_name_bill'];
+
+    $sql2 = "Select * from receipt order by rec_no desc limit 1";
+    $sth2 = $this->db->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
+    $rec_no = intval($sth2[0]['rec_no'] + 1);
+
+    $sql3 = "INSERT INTO receipt(rec_no,rec_bl_id,rec_guest_name,rec_guest_address,rec_guest_tax_id,rec_room_name,rec_checkin,rec_checkout,rec_night,rec_price,rec_status,rec_ginfo_name)
+    values('$rec_no','$rec_bl_id','$rec_name_bill','$ginfo_bill_addr','$ginfo_tax_id','$room_name','$rec_checkin','$rec_checkout','$rec_night','$rec_price','0','$ginfo_name_bill')";
+    // return $this->response->withJson($sth);
+    try {
+        $this->db->query($sql3);
+        return $this->response->withJson(array('message' => 'success'));
+    } catch (PDOException $e) {
+        return $this->response->withJson(array('message' => 'false'));
+    }
+});
 // GROUP5 //
 
 

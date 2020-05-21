@@ -46,6 +46,7 @@ $(() => {
 
 });
 function add_agency() {
+    
     var code = $("#code_agency").val();
     var name = $("#name_agency").val();
     var commission = $("#commission_agency").val();
@@ -57,6 +58,7 @@ function add_agency() {
     // alert(code+name+commission+sales+email+tel+address+comment);
     var urlAPI = "http://localhost/hermes/api.php/add_agency/"+ code + "/" + name + "/" + address + "/" + sales + "/" + email + "/" + tel + "/" + commission + "/" + comment  ;
     $.getJSON(urlAPI, { format: "json" }).done(function (data) {
+    
     });
    
 }
