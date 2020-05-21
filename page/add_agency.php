@@ -177,10 +177,8 @@
                      <div class="col-md-12">
                          <div class="card-header">
                              <div class="row">
-                                 <div class="col-md-8"><h4 class="card-title">Agency</h4> <label >add,delete and edit agency information</label></div>
+                                 <div class="col-md-8"><h4 class="card-title">Agency</h4> <label >add agency information</label></div>
                                  <div class="col-md-4 text-right">
-                                        <button type="button" id="" class="btn btn-danger btn-round">Delete</button>
-                                        <button type="button" id="" class="btn btn-warning btn-round"> Reguest C/O</button> 
                                         <button type="submit" class="btn btn-success btn-round" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
                                         <button type="button" class="btn btn-info btn-round"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
                              </div>
