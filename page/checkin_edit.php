@@ -1,6 +1,4 @@
-
 <?php include "../function.php" ?>
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -161,106 +159,98 @@
          </nav>
          <!-- End Navbar -->
          <div class="content">
-         <form id="update_form_edit" method="POST">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="card strpied-tabled-with-hover">
-                        <div class="card-header ">
-                           <div class="col-md-12 text-right">
-                           <button onclick="window.location.href='checkin.php';"type="button" id="btncheckin" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
-                              <?php $id = intval($_GET['id']); ?>
-                              <iframe style ="display: none" src="<?php echo base_url("/page/regisPrint.php?gid=$id ")?>" name="frame1"></iframe>
-                              <button  type="button" id="printButton" class="btn btn-warning btn-round" value="print!" onclick="frames['frame1'].print()"><i class="fa fa-print"></i>Print</button>
-                              <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-plus"></i>Guest</button>
-                              <button type="button" id="" class="btn btn-danger btn-round"><i class="fa fa-pencil-square-o"></i> Room</button>
-                              <button type="button" id="" class="btn btn-info btn-round"><i class="fa fa-times"></i> Close</button>
-                           </div>
-                           <hr/>
-                           <div class="row">
-                                <div class="col-md-12">
-                                <div class="fixposition">
-                                    <strong>Stay date : </strong><span id="show_checkin"></span><strong> to </strong>
-                                    <span id="show_checkout"></span>
-                                    <strong> Book Date : </strong><span id="show_bookdate"></span>
-                                    <strong> By : </strong><span id="show_fname"></span>
-                                    <strong> Agency : </strong><span id="show_lname"></span>
-                                    <strong> Phone : </strong><span id="show_phone"></span><br>
-                                    <strong> Room : </strong><span id="show_room"></span>
-                                    <strong> Type : </strong><span id="show_type"></span>
-                                    <strong> Building : </strong><span id="show_building"></span>
-                                    <strong> Views : </strong><span id="show_views"></span>
-                                </div>
-                                </div> 
-                                <hr/>
-                         
-                           </div>
-                        </div>
-
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="card-body table-full-width table-responsive">
-                                 <table id="" class="table pmd-table table-hover table-striped display dt-responsive nowrap"  width="100%">
-                                    <thead>
-                                       <th></th>
-                                       <th>First name</th>
-                                       <th>Last name</th>
-                                       <th>Sex</th>
-                                       <th>Nationality</th>
-                                       <th>Phone</th>
-                                       <th>Status</th>
-                                    </thead>
-                                    <tbody>
-                                       <td><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
-                                       <td id="fname_edit_infoguest"></td>
-                                       <td id="lname_edit_infoguest"></td>
-                                       <td id="sex_edit_infoguest"></td>
-                                       <td id="nation_edit_infoguest"></td>
-                                       <td id="phone_edit_infoguest"></td>
-                                       <td id="badd_edit_infoguest"></td>
-                                    </tbody>
-                                 </table>
-                                 <div class="row">
-                                    <div class="col-md-6 ">
-                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Showing 1 result</label>
-
-
+            <form id="update_form_edit" method="POST">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="card strpied-tabled-with-hover">
+                           <div class="card-header ">
+                              <div class="col-md-12 text-right">
+                                 <button onclick="window.location.href='checkin.php';"type="button" id="btncheckin" class="btn btn-warning btn-round"><i class="fa fa-check"></i>Check in</button>
+                                 <?php $id = intval($_GET['id']); ?>
+                                 <iframe style ="display: none" src="<?php echo base_url("/page/regisPrint.php?gid=$id ")?>" name="frame1"></iframe>
+                                 <button  type="button" id="printButton" class="btn btn-warning btn-round" value="print!" onclick="frames['frame1'].print()"><i class="fa fa-print"></i>Print</button>
+                                 <button type="button" id="" class="btn btn-warning btn-round"><i class="fa fa-plus"></i>Guest</button>
+                                 <button type="button" id="" class="btn btn-danger btn-round"><i class="fa fa-pencil-square-o"></i> Room</button>
+                                 <button type="button" id="" class="btn btn-info btn-round"><i class="fa fa-times"></i> Close</button>
+                              </div>
+                              <hr/>
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <div class="fixposition">
+                                       <strong>Stay date : </strong><span id="show_checkin"></span><strong> to </strong>
+                                       <span id="show_checkout"></span>
+                                       <strong> Book Date : </strong><span id="show_bookdate"></span>
+                                       <strong> By : </strong><span id="show_fname"></span>
+                                       <strong> Agency : </strong><span id="show_lname"></span>
+                                       <strong> Phone : </strong><span id="show_phone"></span><br>
+                                       <strong> Room : </strong><span id="show_room"></span>
+                                       <strong> Type : </strong><span id="show_type"></span>
+                                       <strong> Building : </strong><span id="show_building"></span>
+                                       <strong> Views : </strong><span id="show_views"></span>
                                     </div>
-                                </div>
-                               
-
-                            </div>
-                              </div>     
+                                 </div>
+                                 <hr/>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <div class="card-body table-full-width table-responsive">
+                                    <table id="" class="table pmd-table table-hover table-striped display dt-responsive nowrap"  width="100%">
+                                       <thead>
+                                          <th></th>
+                                          <th>First name</th>
+                                          <th>Last name</th>
+                                          <th>Sex</th>
+                                          <th>Nationality</th>
+                                          <th>Phone</th>
+                                          <th>Status</th>
+                                       </thead>
+                                       <tbody>
+                                          <td><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
+                                          <td id="fname_edit_infoguest"></td>
+                                          <td id="lname_edit_infoguest"></td>
+                                          <td id="sex_edit_infoguest"></td>
+                                          <td id="nation_edit_infoguest"></td>
+                                          <td id="phone_edit_infoguest"></td>
+                                          <td id="badd_edit_infoguest"></td>
+                                       </tbody>
+                                    </table>
+                                    <div class="row">
+                                       <div class="col-md-6 ">
+                                          <label class="mr-sm-2" for="inlineFormCustomSelect">Showing 1 result</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                         </>
                      </div>
                   </div>
                </div>
-            </div>
+         </div>
          </form>
       </div>
    </body>
    <!--   Core JS Files   -->
    <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js')?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
-    <script src="<?php echo base_url('assets/js/core/bootstrap.min.js')?>" type="text/javascript"></script>
-    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-    <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js')?>"></script>
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!--  Chartist Plugin  -->
-    <script src="<?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
-    <!--  Notifications Plugin    -->
-    <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
-    <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-    <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0')?> " type="text/javascript"></script>
-    <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-    <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
+   <script src="<?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
+   <script src="<?php echo base_url('assets/js/core/bootstrap.min.js')?>" type="text/javascript"></script>
+   <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+   <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js')?>"></script>
+   <!--  Google Maps Plugin    -->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+   <!--  Chartist Plugin  -->
+   <script src="<?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
+   <!--  Notifications Plugin    -->
+   <script src="<?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
+   <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+   <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0')?> " type="text/javascript"></script>
+   <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+   <script src="<?php echo base_url('assets/js/demo.js')?>"></script>
    <script src="<?php echo base_url('application/show_info_checkinedit.js')?>"></script>
    <script src=<?php echo base_url("/application/Search.js") ?>></script>
    <script src=<?php echo base_url("/application/print_register.js") ?>></script>
-   
-
-</script>
+   </script>
 </html>
