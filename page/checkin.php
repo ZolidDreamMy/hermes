@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php include "../function.php" ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,7 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href=<?php echo base_url("/assets/css/demo.css") ?> rel="stylesheet" />
     <link href=<?php echo base_url("/assets/DataTables-1.10.20/media/css/jquery.dataTables.css") ?> rel="stylesheet" />
-    
+
     <style>
         .colordate {
             color: white;
@@ -30,7 +31,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image=<?php echo base_url("/assets/img/sidebar-5.jpg")?>>
+        <div class="sidebar" data-image=<?php echo base_url("/assets/img/sidebar-5.jpg") ?>>
             <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
   
@@ -168,25 +169,53 @@
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Check In</h4>
-                                    <hr>
+
+
                                     <div class="col-md-12">
-                                        <div class="card bg-primary text-white">
+                                        <div class="">
                                             <h3 class="card-title text-center mb-2">
                                                 <div class="d-flex flex-wrap justify-content-center mt-2">
                                                     <div class="colordate">
-                                                        <body>
-                                                            <h2></h2><? echo  date("F jS Y, ");?>
 
+                                                        <body>
+                                                            <div class="col-md-12">
+                                                                <div>
+                                                                    <h2 class="positions card-title text-center mb-2 ">
+                                                                        <div class="d-flex flex-wrap justify-content-center mt-2">
+                                                                            <div>
+                                                                                <div id="local_time">&nbsp;</div>
+                                                                                <script language="JavaScript1.2">
+                                                                                    function local_date(now_time) {
+                                                                                        var arrMonthName = new Array("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                                                                                        current_local_time = new Date();
+                                                                                        if (current_local_time.getDate() == '1')
+                                                                                            var z = 'st';
+                                                                                        else if (current_local_time.getDate() == '2')
+                                                                                            var z = 'nd';
+                                                                                        else if (current_local_time.getDate() == '3')
+                                                                                            var z = 'rd';
+                                                                                        else var z = 'th';
+                                                                                        if (current_local_time.getHours() >= '0' && current_local_time.getHours() <= '12')
+                                                                                            var times = 'am';
+                                                                                        else var times = 'pm';
+
+                                                                                        local_time.innerHTML = arrMonthName[(current_local_time.getMonth() + 1)] + " " + current_local_time.getDate() + "" + z + " " + current_local_time.getFullYear() + "  ,  " + current_local_time.getHours() + ":" + current_local_time.getMinutes() + ":" + current_local_time.getSeconds() + " " + times;
+                                                                                        setTimeout("local_date()", 1000);
+                                                                                    }
+                                                                                    setTimeout("local_date()", 1000);
+                                                                                </script>
+                                                                            </div>
+                                                                        </div>
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
                                                         </body>
                                                     </div>
-                                                    <a><span class="badge hours"></span></a> :
-                                                    <a><span class="badge min"></span></a> :
-                                                    <a><span class="badge sec"></span></a>
                                                 </div>
                                             </h3>
                                         </div>
                                     </div>
+                                    <hr>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Show</label>
@@ -210,7 +239,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
-                                    <table id="datatable1" class="table pmd-table table-hover table-striped display dt-responsive nowrap" cellspacing="0" width="100%">
+                                    <table id="datatable1" class="table pmd-table table-hover table-striped display position-card ">
                                         <thead>
                                             <th> </th>
                                             <th>Guest name</th>
@@ -224,54 +253,61 @@
 
                                         </tbody>
                                     </table>
-                
-                                </div>
-                            </>
-                        </div>
 
+                                </div>
+                                </>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav>
+                            <ul class="footer-menu">
+                                <li>
+                                    <a href="#">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Company
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Portfolio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Blog
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="copyright text-center">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>
+                                <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            </p>
+                        </nav>
+                    </div>
+                </footer>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                        </p>
-                    </nav>
-                </div>
-            </footer>
         </div>
-    </div>
+        <style>
+            .position-card {
+                padding-left: 20px;
+                padding-right: 20px;
 
+            }
+        </style>
 
 </body>
+
 
 <!--   Core JS Files   -->
 <script src=<?php echo base_url("/assets/js/core/jquery.3.2.1.min.js") ?> type="text/javascript"></script>
@@ -292,22 +328,7 @@
 <script src=<?php echo base_url("/assets/DataTables-1.10.20/media/js/jquery.dataTables.min.js") ?>></script>
 <script src=<?php echo base_url("/application/Search.js") ?>></script>
 
-<script>
-    $(document).ready(function() {
-        setInterval(function() {
-            var hours = new Date().getHours();
-            $(".hours").html((hours < 10 ? "0" : "") + hours);
-        }, 1000);
-        setInterval(function() {
-            var minutes = new Date().getMinutes();
-            $(".min").html((minutes < 10 ? "0" : "") + minutes);
-        }, 1000);
-        setInterval(function() {
-            var seconds = new Date().getSeconds();
-            $(".sec").html((seconds < 10 ? "0" : "") + seconds);
-        }, 1000);
-    });
-</script>
+
 
 
 

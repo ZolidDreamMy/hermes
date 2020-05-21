@@ -1,3 +1,4 @@
+
 <?php include "../function.php" ?>
 
 <!DOCTYPE html>
@@ -192,22 +193,7 @@
                                 </div>
                                 </div> 
                                 <hr/>
-                              <div class="col-md-6">
-                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Show</label>
-                                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                                    <option selected>10</option>
-                                    <option value="1">20</option>
-                                    <option value="2">50</option>
-                                    <option value="3">100</option>
-                                 </select>
-                                 <label class="mr-sm-2" for="inlineFormCustomSelect">entries</label>
-                              </div>
-                              <div class="col-md-4">
-                                 <div class="input-group mb-4">
-                                    <label for="example-text-input" class="col-sm-3 col-form-label">Search: </label>
-                                    <input type="text" class="form-control" placeholder="Search"  id="keyword" value="">
-                                 </div>
-                              </div>
+                         
                            </div>
                         </div>
 
@@ -235,18 +221,13 @@
                                     </tbody>
                                  </table>
                                  <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Showing 1 to 1 entries</label>
+                                    <div class="col-md-6 ">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Showing 1 result</label>
 
 
                                     </div>
                                 </div>
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-                                </ul>
-
+                               
 
                             </div>
                               </div>     
