@@ -38,10 +38,10 @@ $.getJSON(urlAPI).done(function (data) {
   $("#tb1").append(line);
 
   $('#datatable1').DataTable({
-    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    "lengthMenu": [[25, 50, -1], [25, 50, "All"]],
     "autoWidth": false,
     "searching": true,
-    "pageLength": 25,
+   
     
   });
 });
