@@ -238,6 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            <div class="col-md-12">
                                 <div class="card-body table-full-width table-responsive">
                                     <table id="datatable1" class="table pmd-table table-hover table-striped display position-card ">
                                         <thead>
@@ -253,12 +254,11 @@
 
                                         </tbody>
                                     </table>
-
                                 </div>
                                 </>
+                                </div>
                             </div>
-
-                        </div>
+                         </div>
                     </div>
                 </div>
                 <footer class="footer">

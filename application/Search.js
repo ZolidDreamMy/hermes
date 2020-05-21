@@ -38,7 +38,7 @@ $.getJSON(urlAPI).done(function (data) {
   $("#tb1").append(line);
 
   $('#datatable1').DataTable({
-    "lengthMenu": [[25, 50, -1], [25, 50, "All"]],
+    "lengthMenu": [[10,25, 50], [10,25, 50 ]],
     "autoWidth": false,
     "searching": true,
    
