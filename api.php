@@ -295,7 +295,7 @@ $app->get('/show_info/{id}', function (Request $request, Response $response, arr
     on r.room_type = rt.rtype_id join room_view rv
     on r.room_view = rv.rview_id join building bd
     on r.room_building = bd.building_id
-    where bl.bl_id = $bl_id ";
+    where g.ginfo_id = $bl_id ";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $this->response->withJson($sth);
 });
@@ -321,7 +321,7 @@ $app->post('/update_guest', function (Request $request, Response $response, arra
         $sql = "SELECT g.ginfo_id from guest_info g 
         join book_log bl
         on  g.ginfo_id = bl.bl_ginfo
-        WHERE bl.bl_id = $bl_id ";
+        WHERE g.ginfo_id = $bl_id ";
         $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         $ginfo_id = ($sth[0]['ginfo_id']);
  

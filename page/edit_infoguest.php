@@ -41,13 +41,13 @@
                     </div>
                     <ul class="nav">
                         <li>
-                            <a class="nav-link" href="dashboard.html">
+                            <a class="nav-link" href="#">
                                 <i class="nc-icon nc-chart-pie-35"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="./user.html">
+                            <a class="nav-link" href="#">
                                 <i class="nc-icon nc-circle-09"></i>
                                 <p>User Profile</p>
                             </a>
@@ -190,7 +190,7 @@
                                                             ARE YOU SURE WANT TO CHANGES ?
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn_close">Close</button>
                                                             <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_yes_update">Save
                                                                 changes</button>
                                                         </div>

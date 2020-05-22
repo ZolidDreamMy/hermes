@@ -47,13 +47,13 @@
                     </div>
                     <ul class="nav">
                         <li>
-                            <a class="nav-link" href="dashboard.html">
+                            <a class="nav-link" href="#">
                                 <i class="nc-icon nc-chart-pie-35"></i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="./user.html">
+                            <a class="nav-link" href="#">
                                 <i class="nc-icon nc-circle-09"></i>
                                 <p>User Profile</p>
                             </a>
@@ -163,8 +163,8 @@
                         </div>
                         <div class="card-body">
                             <hr>
-                            <div class="table-responsive table-full-width">
-                                <table class="table table-hover" id="data_table_agency">
+                            <div class="card-body table-full-width table-responsive">
+                                <table class="table table-hover table-striped display position-card" id="data_table_agency">
                                     <thead>
                                         <tr>
                                             <th></th>

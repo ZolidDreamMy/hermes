@@ -2,6 +2,7 @@ $(() => {
     show_info();
     show_info_edit();
     $("#save_edit_infoguest").click(Update_infoguest_edit);
+    $("#btn_close").click(redirectclose);
 });
 
 function show_info() {
@@ -90,9 +91,13 @@ function Update_infoguest_edit() {
     });
 }
 
+function redirectclose() {
+    window.location.replace(base_url("page/checkin_edit.php"));
+  }
 function reload() {
     location.reload();
 }
+
 
 function base_url(path){
     var host = window.location.origin;
