@@ -38,7 +38,7 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="dashboard.html">
                                 <i class="nc-icon nc-chart-pie-35"></i>
-                                <p>Checkout</p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li>
@@ -90,7 +90,7 @@
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg" color-on-scroll="500">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#pablo"> Checkout</a>
+                        <a class="navbar-brand" href="#pablo"> Dashboard </a>
                         <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-bar burger-lines"></span>
                             <span class="navbar-toggler-bar burger-lines"></span>
@@ -155,58 +155,77 @@
                 </nav>
                 <!-- End Navbar -->
                 <!-- Start edit_infoguest -->
-                <div class="content">        
-                    <?php $rec_bl_id = $_GET['id'] ?>
+                <div class="content">
+
                     <form id="update_form_edit" method="POST">
                         <div class="card">
                             <div class="">
-                                <div class="col-md-12 text-right mt-3 ">
-                                <iframe style ="display: none" src="<?php echo base_url("/page/printInhouse.php?rec_bl_id=".$rec_bl_id)?>" name="frame1"></iframe>
-                                    <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
-                                    <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
-                                    <button type="button" id="btn_print" class="btn btn-warning btn-round" onclick="frames['frame1'].print()">Print</button>
-                                    <button type="submit" id="" class="btn btn-info btn-round ">Close</button>
-
+                                <div class="fixposition">
+                                    <br>
+                                    <strong>Stay date : </strong><span id="show_checkin"></span><strong> to </strong>
+                                    <span id="show_checkout"></span>
+                                    <strong>| Book Date : </strong><span id="show_bookdate"></span>
+                                    <strong>| By : </strong><span id="show_fname"></span>
+                                    <strong>| Agency : </strong><span id="show_lname"></span>
+                                    <strong>| Phone : </strong><span id="show_phone"></span><br>
+                                    <strong>Room : </strong><span id="show_room"></span>
+                                    <strong>| Type : </strong><span id="show_type"></span>
+                                    <strong>| Building : </strong><span id="show_building"></span>
+                                    <strong>| Views : </strong><span id="show_views"></span>
                                 </div>
                                 <div class="card-head">
                                     <hr>
                                     <div class="row">
 
                                         <div class="col-md-10">
-                                            <h4 class="mt-4 fixposition"> INFORMATION <strong> :</strong> <span id="show_fname"></span> <span id="show_lname"></span></h3>
+                                            <h3 class="mt-4 fixposition"> EDIT GUEST INFORMATION <span class="fname"></span> <span class="lname"></span></h3>
                                         </div>
                                         <div class="col-md-2 mt-3">
                                             <button type="submit" data-toggle="modal" id="save_edit_infoguest" data-target="#exampleModal" class="btn btn-primary btn-round ">Save</button>
 
+
                                             <!-- Button trigger modal -->
+
+
+                                            <!-- Modal -->
+                                            <!-- ALERT ARE YOU SURE? -->
                                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" id="exampleModalLabel">WANT TO CHANGES?</h4>
+                                                            <h5 class="modal-title" id="exampleModalLabel">EDIT GUEST INFORMATION
+                                                            </h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-
+                                                        <div class="modal-body">
+                                                            ARE YOU SURE WANT TO CHANGES ?
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_yes_update">Save</button>
+                                                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_yes_update">Save
+                                                                changes</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <button type="submit" id="cancel_edit_infoguest" class="btn btn-info btn-round ">Cancel</button>
-                                            <input type="text" name="id_bl_update" id="id_bl_update" style="display:none;">
                                             <!-- ALERT BOX SUCCESS -->
                                             <div id="modal_alert" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">
                                                     <div class="modal-content alert alert-success">
-                                                        SUCCESSFULLY
+                                                        SAVE SUCCESSFULLY
                                                     </div>
                                                 </div>
                                             </div>
+
+
+
+
+
+
+                                            <button type="submit" id="cancel_edit_infoguest" class="btn btn-info btn-round ">Cancel</button>
+                                            <input type="text" name="id_bl_update" id="id_bl_update" style="display:none;">
                                         </div>
                                     </div>
                                     <hr>
@@ -270,9 +289,9 @@
                                         <div class="col-md-3">
                                             <label for="">Breakfast : </label>
                                             <select class="form-control" id="breakfast_edit_infoguest" name="breakfast_edit_infoguest">
-                                                <option value="N/A">N/A</option>
-                                                <option value="set1">set1</option>
-                                                <option value="set2">set2</option>
+                                                <option value=" N/A  ">N/A</option>
+                                                <option value="1">set1</option>
+                                                <option value="2">set2</option>
                                             </select>
                                         </div>
                                         <div class="col-md-3">
@@ -343,8 +362,6 @@
     <script src="<?php echo base_url('assets/js/core/bootstrap.min.js') ?>" type="text/javascript"></script>
     <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
     <script src="<?php echo base_url('assets/js/plugins/bootstrap-switch.js') ?>"></script>
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!--  Chartist Plugin  -->
     <script src="<?php echo base_url('assets/js/plugins/chartist.min.js') ?>"></script>
     <!--  Notifications Plugin    -->
@@ -353,8 +370,6 @@
     <script src="<?php echo base_url('assets/js/light-bootstrap-dashboard.js?v=2.0.0') ?> " type="text/javascript"></script>
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?php echo base_url('assets/js/demo.js') ?>"></script>
-
-    <script src="<?php echo base_url('application/save_checkout.js') ?>"></script>
-    <script src="<?php echo base_url('application/edit_infoguest_checkout.js') ?>"></script>
+    <script src="<?php echo base_url('application/edit_infoguest.js') ?>"></script>
 
 </html>

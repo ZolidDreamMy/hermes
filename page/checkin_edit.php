@@ -209,7 +209,9 @@
                                           <th>Status</th>
                                        </thead>
                                        <tbody>
-                                          <td><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
+                                          <?php $id = $_GET['id']; ?>
+                                          <td><a href="<?php echo base_url("/page/edit_infoguest.php?id=".$id)?>"><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> 
+                                          <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
                                           <td id="fname_edit_infoguest"></td>
                                           <td id="lname_edit_infoguest"></td>
                                           <td id="sex_edit_infoguest"></td>

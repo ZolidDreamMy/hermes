@@ -17,14 +17,14 @@ $(() => {
 
 function btnSearch_Click() {
 // var dataCheck = $("#keyword").val();
-var urlAPI = "http://localhost/hermes/apicheckin.php/getdb";
+var urlAPI = base_url("api.php/search");
 $.getJSON(urlAPI).done(function (data) {
   // console.log(JSON.stringify(data));
   var line = "";
   $.each(data, function (k, item) {
     // console.log(item);
     line += "<tr>";
-    line += "<td > <a href = http://localhost/hermes/page/checkin_edit.php?id="+item.ginfo_id+" ><button type= 'button' class= '  btn btn-info btn-sm btn-round ' id='load_checkin'>Info</button></a> </td>";
+    line += "<td > <a href ='checkin_edit.php?id="+item.ginfo_id+"' ><button type= 'button' class= '  btn btn-info btn-sm btn-round ' id='load_checkin'>Info</button></a> </td>";
     line += "<td >" + item.ginfo_first_name + "</td>";
     line += "<td >" + item.room_name + "</td>";
     line += "<td >" + item.ginfo_first_name + "</td>";
@@ -76,4 +76,13 @@ $.getJSON(urlAPI, {
   $("#incbreakfast_edit_infoguest").val(data["0"]["bl_incbreakfast"]);
   $("#breakfast_edit_infoguest").val(data["0"]["bl_breakfast"]);
 })
+}
+
+function base_url(path){
+  var host = window.location.origin;
+  // "http://localhost"
+  var pathArray = window.location.pathname.split( '/' );
+  // split path
+  return host+"/"+pathArray[1]+"/"+path;
+  // return http://localhost/hermes/+path
 }

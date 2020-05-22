@@ -165,6 +165,27 @@ $app->post('/save_edit_checkout', function (Request $request, Response $response
         return $this->response->withJson(array('message' => 'false4'));
     }
 });
+
+//-----------------------------> group 3 <----------------------------//
+$app->get('/show_gesinfo_checkout', function (Request $request, Response $response, array $args) {
+    $sql = "SELECT * FROM reservation_info rs join book_log bl
+    on rs.resinfo_id = bl.bl_reservation join guest_info g
+    on bl.bl_ginfo = g.ginfo_id join rooms r
+    on bl.bl_room = r.room_id join room_type rt
+    on r.room_type = rt.rtype_id join room_view rv
+    on r.room_view = rv.rview_id join building bd
+    on r.room_building = bd.building_id join  agency a
+    on rs.resinfo_agency = a.agency_id";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $this->response->withJson($sth);
+});
+ 
+$app->get('/show_data_agency', function (Request $request, Response $response, array $args) {
+    $sql = "SELECT * FROM agency WHERE agency_flag ='0' ";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $this->response->withJson($sth);
+});
+
 //card16
 
 //card 23
@@ -208,6 +229,17 @@ $app->get('/editfood/{key}/{include}/{break}/{price}', function (Request $reques
 });
 
 //grad 9 checkinedit
+$app->get('/search', function (Request $request, Response $response, array $args) {
+    $sql = "SELECT *
+    FROM rooms r join book_log b on r.room_id=b.bl_room 
+    join reservation_info re on b.bl_reservation = re.resinfo_id
+    join agency a on re.resinfo_agency=a.agency_id 
+    join guest_info g on b.bl_ginfo = g.ginfo_id
+    -- group by b.bl_id,re.resinfo_first_name,r.room_name,a.agency_name,re.resinfo_telno,b.bl_checkin,re.resinfo_bookdate,g.ginfo_id,g.ginfo_first_name";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $this->response->withJson($sth);
+});
+
 $app->get('/show_info_checkinedit/{id}', function (Request $request, Response $response, array $args) {
     $bl_id = $args['id'];
     $sql = "SELECT * FROM reservation_info rs join book_log bl
@@ -221,6 +253,7 @@ $app->get('/show_info_checkinedit/{id}', function (Request $request, Response $r
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $this->response->withJson($sth);
 });
+
 
 $app->get('/getdb', function (Request $request, Response $response, array $args) {
     $sql = "SELECT * from reservation_info re 
@@ -244,6 +277,58 @@ $app->get('/getdb/{id}', function (Request $request, Response $response, array $
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $this->response->withJson($sth);
 });
+
+
+//---------------------> group3 card 2 show
+$app->get('/show_info/{id}', function (Request $request, Response $response, array $args) {
+    $bl_id = $args['id'];
+    $sql = "SELECT * FROM reservation_info rs join book_log bl
+    on rs.resinfo_id = bl.bl_reservation join guest_info g
+    on bl.bl_ginfo = g.ginfo_id join rooms r
+    on bl.bl_room = r.room_id join room_type rt
+    on r.room_type = rt.rtype_id join room_view rv
+    on r.room_view = rv.rview_id join building bd
+    on r.room_building = bd.building_id
+    where bl.bl_id = $bl_id ";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $this->response->withJson($sth);
+});
+//---------------------> group3 // card 2 update
+$app->post('/update_guest', function (Request $request, Response $response, array $args) {
+    $params = $_POST;
+    $bl_id = $params['id_bl_update'];
+    $ginfo_first_name = $params['fname_edit_infoguest'];
+    $ginfo_last_name = $params['lname_edit_infoguest'];
+    $ginfo_passport_id = $params['passport_edit_infoguest'];
+    $ginfo_telno = $params['phone_edit_infoguest'];
+    $ginfo_birthday = $params['bd_edit_infoguest'];
+    $ginfo_nation = $params['nation_edit_infoguest'];
+    $ginfo_email = $params['email_edit_infoguest'];
+    $ginfo_sex = $params['sex_edit_infoguest'];
+    $room_price = $params['room_price_edit_infoguest'];
+    $ginfo_mail_addr = $params['padd_edit_infoguest'];
+    $ginfo_comment = $params['badd_edit_infoguest'];
+    $bl_incbreakfast = $params['incbreakfast_edit_infoguest'];
+    $bl_breakfast = $params['breakfast_edit_infoguest'];
+    try {
+        $sql = "SELECT g.ginfo_id from guest_info g 
+        join book_log bl
+        on  g.ginfo_id = bl.bl_ginfo
+        WHERE bl.bl_id = $bl_id ";
+        $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        $ginfo_id = ($sth[0]['ginfo_id']);
+ 
+        $sql1 = "UPDATE guest_info set ginfo_first_name ='$ginfo_first_name', ginfo_last_name ='$ginfo_last_name', ginfo_passport_id ='$ginfo_passport_id', 
+        ginfo_birthday ='$ginfo_birthday' , ginfo_nation = '$ginfo_nation', ginfo_email = '$ginfo_email', ginfo_telno = '$ginfo_telno', 
+        ginfo_mail_addr ='$ginfo_mail_addr', ginfo_comment = '$ginfo_comment',ginfo_tax_id='115522', ginfo_name_bill='test', ginfo_sex ='$ginfo_sex' where ginfo_id = $ginfo_id";
+        $this->db->query($sql1);
+ 
+        return $this->response->withJson(array('message' => 'success'));
+    } catch (PDOException $e) {
+        return $this->response->withJson(array('message' => 'false'));
+    }
+});
+
 //grad 9 checkinedit
 
 // GROUP 1
@@ -283,13 +368,13 @@ $app->get('/printReceipt/{idcheck}', function (Request $request, Response $respo
     join guest_info gin on bl.bl_ginfo = gin.ginfo_id
     where rec_bl_id = $id order by rec_no desc limit 1";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
+    
     return $this->response->withJson($sth);
 });
 $app->post('/saveReceipt', function (Request $request, Response $response, array $args) {
     $params = $_POST;
     $rec_bl_id = intval($params['rec_bl_id']);
-
+ 
     $sql = "Select * from book_log bl join guest_info gin on bl.bl_ginfo = gin.ginfo_id join rooms r on bl.bl_room = r.room_id
     where bl_id = $rec_bl_id order by bl_id desc limit 1";
     $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -302,11 +387,11 @@ $app->post('/saveReceipt', function (Request $request, Response $response, array
     $rec_night = intval($sth[0]['ginfo_night']);
     $rec_price = doubleval($sth[0]['bl_price']);
     $ginfo_name_bill = $sth[0]['ginfo_name_bill'];
-
+    
     $sql2 = "Select * from receipt order by rec_no desc limit 1";
     $sth2 = $this->db->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
-    $rec_no = intval($sth2[0]['rec_no'] + 1);
-
+    $rec_no = intval($sth2[0]['rec_no']+1);
+    
     $sql3 = "INSERT INTO receipt(rec_no,rec_bl_id,rec_guest_name,rec_guest_address,rec_guest_tax_id,rec_room_name,rec_checkin,rec_checkout,rec_night,rec_price,rec_status,rec_ginfo_name)
     values('$rec_no','$rec_bl_id','$rec_name_bill','$ginfo_bill_addr','$ginfo_tax_id','$room_name','$rec_checkin','$rec_checkout','$rec_night','$rec_price','0','$ginfo_name_bill')";
     // return $this->response->withJson($sth);
@@ -317,7 +402,16 @@ $app->post('/saveReceipt', function (Request $request, Response $response, array
         return $this->response->withJson(array('message' => 'false'));
     }
 });
+$app->get('/getHotel/{idcheck}', function (Request $request, Response $response, array $args) {
+    $id = $args['idcheck'];
+    $sql = "SELECT * from hotel
+    where hotel_id = $id";
+    $sth = $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $this->response->withJson($sth);
+});
 // GROUP5 //
+
 
 
 $app->run();

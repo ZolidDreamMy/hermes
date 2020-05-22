@@ -18,7 +18,7 @@
     <link href=<?php echo base_url("/assets/css/light-bootstrap-dashboard.css?v=2.0.0 ") ?> rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href=<?php echo base_url("/assets/css/demo.css") ?> rel="stylesheet" />
-    <link href=<?php echo base_url("/assets/DataTables-1.10.20/media/css/jquery.dataTables.css") ?> rel="stylesheet" />
+    <link href=<?php echo base_url("/assets/css/jquery.dataTables.css") ?> rel="stylesheet" />
 
     <style>
         .colordate {
@@ -176,6 +176,7 @@
                                             <h3 class="card-title text-center mb-2">
                                                 <div class="d-flex flex-wrap justify-content-center mt-2">
                                                     <div class="colordate">
+
                                                         <body>
                                                             <div class="col-md-12">
                                                                 <div>
@@ -187,9 +188,9 @@
                                                                                     function local_date(now_time) {
                                                                                         var arrMonthName = new Array("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
                                                                                         current_local_time = new Date();
-                                                                                        if (current_local_time.getDate() == '1' || current_local_time.getDate() =='21'|| current_local_time.getDate() =='31')
+                                                                                        if (current_local_time.getDate() == '1' || current_local_time.getDate() == '21' || current_local_time.getDate() == '31')
                                                                                             var z = 'st';
-                                                                                        else if (current_local_time.getDate() == '2'|| current_local_time.getDate() == '22')
+                                                                                        else if (current_local_time.getDate() == '2' || current_local_time.getDate() == '22')
                                                                                             var z = 'nd';
                                                                                         else if (current_local_time.getDate() == '3' || current_local_time.getDate() == '23')
                                                                                             var z = 'rd';
@@ -237,27 +238,27 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-12">
-                                <div class="card-body table-full-width table-responsive">
-                                    <table id="datatable1" class="table pmd-table table-hover table-striped display position-card ">
-                                        <thead>
-                                            <th> </th>
-                                            <th>Guest name</th>
-                                            <th>Room</th>
-                                            <th>Contact Name</th>
-                                            <th>Phone</th>
-                                            <th>Agency</th>
-                                            <th>Book Dates</th>
-                                        </thead>
-                                        <tbody id="tb1">
+                                <div class="col-md-12">
+                                    <div class="card-body table-full-width table-responsive">
+                                        <table id="datatable1" class="table pmd-table table-hover table-striped display position-card ">
+                                            <thead>
+                                                <th> </th>
+                                                <th>Guest name</th>
+                                                <th>Room</th>
+                                                <th>Contact Name</th>
+                                                <th>Phone</th>
+                                                <th>Agency</th>
+                                                <th>Book Dates</th>
+                                            </thead>
+                                            <tbody id="tb1">
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                </>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </>
                                 </div>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
                 <footer class="footer">
@@ -324,7 +325,9 @@
 <script src=<?php echo base_url("/assets/js/light-bootstrap-dashboard.js?v=2.0.0 ") ?> type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src=<?php echo base_url("/assets/js/demo.js") ?>></script>
-<script src=<?php echo base_url("/assets/DataTables-1.10.20/media/js/jquery.dataTables.min.js") ?>></script>
+<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery.dataTables.js') ?>"></script>
+
 <script src=<?php echo base_url("/application/Search.js") ?>></script>
 
 
