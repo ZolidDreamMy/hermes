@@ -210,8 +210,8 @@
                                        </thead>
                                        <tbody>
                                           <?php $id = $_GET['id']; ?>
-                                          <td><a href="<?php echo base_url("/page/edit_infoguest.php?id=".$id)?>"><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button> 
-                                          <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
+                                          <td><a href="<?php echo base_url("/page/edit_infoguest.php?id=" . $id) ?>"><button type="button" class="btn btn-info btn-sm btn-round"><i class="fa fa-info-circle"></i>Info</button>
+                                                <button type="button" class="btn btn-danger btn-sm btn-round"><i class="fa fa-trash-o"></i>Del</button></td>
                                           <td id="fname_edit_infoguest"></td>
                                           <td id="lname_edit_infoguest"></td>
                                           <td id="sex_edit_infoguest"></td>
@@ -229,12 +229,63 @@
                               </div>
                            </div>
                         </div>
+                        <!-- form -->
+                        <form id="form_edit_contact" action="" method="POST">
+                           <div class="card-body">
+                              <!-- row contact -->
+                              <div class="row">
+                                 <div class="col-md-10">
+                                    <h4>
+                                       Room Information
+                                    </h4>
+                                 </div>
+                                 <div class="col-md-2">
+                                    <button type="button" id="" class="btn btn-danger btn-round pull-right"><i class="fa fa-times"></i> </button>
+                                 </div>
+
+                              </div>
+                              <!--end row contact -->
+                              <!-- row form edit data -->
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                       Room :
+                                       <!-- style="display:none;" -->
+                                       <select name="roomName" id="select" class="form-control" style="width:200px;">
+                                          <option value="">selet room</option>
+
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 ">
+                                    <b>Name: </b><span id="show_fname"></span><br />
+                                    <b>Type: </b><span id="show_type"></span><br />
+                                    <b>Building: </b><span id="show_building"></span><br />
+                                    <b>Views: </b><span id="show_views"></span><br />
+                                    <b>Guest: </b><span id="room_guest"></span><br />
+                                 </div>
+                                 <div class="col-md-4">
+                                    <b>Price:
+                                       <input type="text" name="display_guest_firstname" id="room_price" class="form " placeholder="000.00" style="width:200px;" /></b>
+                                    <br />
+                                    <b>Night: </b><span id="show_night"></span><br />
+                                    <b>Total Price: </b> <span id="room_guest"></span> <br />
+                                 </div>
+                              </div>
+
+
+                              <button type="submit" class="btn btn-info btn-fill pull-right">Confirm</button>
+                              <div class="clearfix"></div>
+                           </div>
+                        </form>
+                        <!-- END form -->
                      </div>
                   </div>
                </div>
          </div>
          </form>
       </div>
+
 </body>
 <!--   Core JS Files   -->
 <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js') ?>" type="text/javascript"></script>
@@ -255,6 +306,7 @@
 <script src="<?php echo base_url('application/show_info_checkinedit.js') ?>"></script>
 <script src=<?php echo base_url("/application/Search.js") ?>></script>
 <script src=<?php echo base_url("/application/print_register.js") ?>></script>
+<script src=<?php echo base_url("/application/show_room.js") ?>></script>
 </script>
 
 </html>

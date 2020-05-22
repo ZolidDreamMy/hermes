@@ -179,8 +179,8 @@
                              <div class="row">
                                  <div class="col-md-8"><h4 class="card-title">Agency</h4> <label >add agency information</label></div>
                                  <div class="col-md-4 text-right">
-                                        <button type="submit" class="btn btn-success btn-round" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
-                                        <button type="button" class="btn btn-info btn-round"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
+                                        <button type="submit" class="btn btn-info btn-round" id="add_agency"><i class="nc-icon nc-simple-add"></i> Save</button> 
+                                        <button type="button" id="btn_close_add_agency" class="btn btn-primary btn-round"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
                              </div>
                          </div>
                          <div class="card-body">
@@ -256,7 +256,14 @@
                  </div>
 
              </div>
- 
+            <!-- ALERT BOX SUCCESS -->
+            <div id="modal_alert" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content alert alert-success">
+                                                        SAVE SUCCESSFULLY
+                                                    </div>
+                                                </div>
+                                            </div>
              <footer class="footer">
                  <div class="container-fluid">
                      <nav>

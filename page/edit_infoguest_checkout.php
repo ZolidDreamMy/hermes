@@ -162,7 +162,7 @@
                             <div class="">
                                 <div class="col-md-12 text-right mt-3 ">
                                 <iframe style ="display: none" src="<?php echo base_url("/page/printInhouse.php?rec_bl_id=".$rec_bl_id)?>" name="frame1"></iframe>
-                                    <button type="button" id="" class="btn btn-primary btn-round"> Check Out</button>
+                                    <button type="button" id="Checkout" class="btn btn-primary btn-round"> Check Out</button>
                                     <button type="button" id="" class="btn btn-danger btn-round"> Reguest C/O</button>
                                     <button type="button" id="btn_print" class="btn btn-warning btn-round" onclick="frames['frame1'].print()">Print</button>
                                     <button type="submit" id="" class="btn btn-info btn-round ">Close</button>

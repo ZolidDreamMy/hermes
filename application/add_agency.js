@@ -1,49 +1,8 @@
-// $(() => {
-//     var query = window.location.search.substring(1);
-//     var vars = query.split("=");
-//     var ID = vars[1];
-//     // alert(ID);
-//     var urlAPI = "http://localhost/hermes/api.php/addroom/" + ID;
-
-//     $.getJSON(urlAPI, {
-//             format: "json",
-//         })
-//         .done(function(data) {
-//             console.log(data);
-//             $("#id_bl_save").val(ID);
-//             $("#fname1").val(data["0"]["resinfo_first_name"]);
-//             $("#lname1").val(data["0"]["resinfo_last_name"]);
-//             $("#tel1").val(data["0"]["resinfo_telno"]);
-//             $("#email1").val(data["0"]["resinfo_email"]);
-//         })
-//         .fail(function(jqxhr, testStatus, error) {});
-//     showRoom();
-// });
-
-// function showRoom() {
-//     //    alert('sdasdsa');
-//     var urlAPI = "http://localhost/hermes/api.php/room";
-//     $.getJSON(urlAPI, {
-//             format: "json",
-//         })
-//         .done(function(data) {
-//             // console.log(data);
-
-//             for (var i = 0; i < data.length; i++) {
-//                 var option = document.createElement("OPTION"),
-//                     txt = document.createTextNode(data[i]["room_name"]);
-//                 option.appendChild(txt);
-//                 option.setAttribute("value", data[i]["room_id"]);
-//                 select.insertBefore(option, select.lastChild);
-//             }
-//         })
-//         .fail(function(jqxhr, textStatus, error) {});
-// }
-
 $(() => {
     $("#add_agency").click(add_agency);
+    $("#btn_close_add_agency").click(redirectAgency);
     
-
+ 
 });
 function add_agency() {
     
@@ -56,9 +15,23 @@ function add_agency() {
     var address = $("#address_agency").val();
     var comment = $("#comment_agency").val();
     // alert(code+name+commission+sales+email+tel+address+comment);
-    var urlAPI = "http://localhost/hermes/api.php/add_agency/"+ code + "/" + name + "/" + address + "/" + sales + "/" + email + "/" + tel + "/" + commission + "/" + comment  ;
+    var urlAPI = base_url("api.php/add_agency/"+ code + "/" + name + "/" + address + "/" + sales + "/" + email + "/" + tel + "/" + commission + "/" + comment)  ;
+    console.log(urlAPI);
+      $('#modal_alert').modal('show');
+      setTimeout(redirectAgency, 800);
     $.getJSON(urlAPI, { format: "json" }).done(function (data) {
-    
+        alert('success');
     });
    
 }
+function redirectAgency() {
+    window.location.replace(base_url("page/agency.php"));
+  }
+function base_url(path){
+    var host = window.location.origin;
+    // "http://localhost"
+    var pathArray = window.location.pathname.split( '/' );
+    // split path
+    return host+"/"+pathArray[1]+"/"+path;
+    // return http://localhost/hermes/+path
+  }

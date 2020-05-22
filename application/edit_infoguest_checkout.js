@@ -2,7 +2,18 @@ $(() => {
     show_info_checkout();
     show_info_editcheckout();
     $("#save_edit_infoguest").click(update_editinfoguest_checkout);
+    $("#Checkout").click(checkout);
 });
+
+function checkout() {
+    var query = window.location.search.substring(1);
+    var vars = query.split("=");
+    var ID = vars[1]
+    var urlAPI = base_url("api.php/checkout/" + ID);
+    $.getJSON(urlAPI, { format: "json" }).done(function(data) {});
+    // $("#bl_checkin").hide();
+    alert("OK");
+}
 
 function show_info_checkout() {
     var query = window.location.search.substring(1);
@@ -73,9 +84,10 @@ function update_editinfoguest_checkout() {
                 console.log("4");
                 if (response["message"] == "success") {
                     $("#modal_alert").modal("show");
+                    reload();
                 }
             });
-
+            
             // GROUP 1 //
             var query = window.location.search.substring(1);
             var vars = query.split("=");
@@ -94,6 +106,10 @@ function update_editinfoguest_checkout() {
         console.log("3");
         e.preventDefault();
     });
+}
+
+function reload() {
+    location.reload();
 }
 
 function base_url(path){
