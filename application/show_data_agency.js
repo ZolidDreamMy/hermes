@@ -28,13 +28,7 @@ $(() => {
 
       $("#agency").append(line);
 
-    $('#data_table_agency').DataTable({
-      "lengthMenu": [[10,25, 50], [10,25, 50 ]],
-      "autoWidth": false,
-      "searching": true,
-     
-      
-    });
+    $('#data_table_agency').DataTable();
   });
   
   }
