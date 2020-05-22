@@ -84,7 +84,7 @@
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg" color-on-scroll="500">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                        <a class="navbar-brand" href="#pablo"> Agency </a>
                         <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-bar burger-lines"></span>
                             <span class="navbar-toggler-bar burger-lines"></span>
@@ -153,7 +153,7 @@
                         <div class="card-head">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <h3 class="mt-4 fixposition">AGENCY</h3>
+                                  
                                 </div>
                                 <div class="col-md-2 mt-4">
                                     <a href="<?php echo base_url('page/add_agency.php') ?>"><button type="submit" id="add_agency" class="btn btn-primary btn-round">Add Agency</button></a>
