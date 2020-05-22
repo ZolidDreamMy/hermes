@@ -38,57 +38,52 @@
  
  <body>
      <div class="wrapper">
-         <div class="sidebar" data-image=<?php echo base_url("/assets/img/sidebar-5.jpg")?>>
-             <!--
-         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
- 
-         Tip 2: you can also add an image using data-image tag
-     -->
-             <div class="sidebar-wrapper">
-                 <div class="logo">
-                     <a href="http://www.creative-tim.com" class="simple-text">
-                         HERMES
-                     </a>
-                 </div>
-                 <ul class="nav">
-                     <li>
-                         <a class="nav-link" href="dashboard.html">
-                             <i class="nc-icon nc-chart-pie-35"></i>
-                             <p>Front Office</p>
-                         </a>
-                     </li>
-                     <li>
-                        <a class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="nc-icon nc-planet"></i>
-                            <span class="notification"></span>
-                            <span class="d-lg-none">Sales & Maketing</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Agency</a>
-                            <a class="dropdown-item" href="#">Daily report</a>
-                        </ul>
-                     </li>
-                     <li class="nav-item active">
-                         <a class="nav-link" href="./table.html">
-                             <i class="nc-icon nc-notes"></i>
-                             <p>House Keeping</p>
-                         </a>
-                     </li>
-                     <li>
-                         <a class="nav-link" href="./typography.html">
-                             <i class="nc-icon nc-paper-2"></i>
-                             <p>Hotel Management</p>
-                         </a>
-                     </li>
-                     <li>
-                         <a class="nav-link" href="./icons.html">
-                             <i class="nc-icon nc-atom"></i>
-                             <p>User</p>
-                         </a>
-                     </li>
-                 </ul>
-             </div>
+     <div class="sidebar" data-image="<?php echo base_url("/assets/img/sidebar-5.jpg") ?>">
+         <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+            
+            Tip 2: you can also add an image using data-image tag
+            -->
+         <div class="sidebar-wrapper">
+            <div class="logo">
+               <a href="http://www.creative-tim.com" class="simple-text">
+                  HERMES
+               </a>
+            </div>
+            <ul class="nav">
+               <li>
+                  <a class="nav-link" href="dashboard.html">
+                     <i class="nc-icon nc-chart-pie-35"></i>
+                     <p>Dashboard</p>
+                  </a>
+               </li>
+               <li>
+                  <a class="nav-link" href="./user.html">
+                     <i class="nc-icon nc-circle-09"></i>
+                     <p>User Profile</p>
+                  </a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link" href="checkin.php">
+                     <i class="nc-icon nc-notes"></i>
+                     <p>Check in</p>
+                  </a>
+               </li>
+               <li>
+                  <a class="nav-link" href="info_checkout.php">
+                     <i class="nc-icon nc-paper-2"></i>
+                     <p>Check out</p>
+                  </a>
+               </li>
+               <li>
+                  <a class="nav-link" href="agency.php">
+                     <i class="nc-icon nc-atom"></i>
+                     <p>Agency</p>
+                  </a>
+               </li>
+            </ul>
          </div>
+      </div>
          <div class="main-panel">
              <!-- Navbar -->
              <nav class="navbar navbar-expand-lg " color-on-scroll="500">

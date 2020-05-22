@@ -53,40 +53,22 @@
                      <p>User Profile</p>
                   </a>
                </li>
-               <li class="nav-item active">
-                  <a class="nav-link" href="./table.html">
+               <li class="nav-item ">
+                  <a class="nav-link" href="checkin.php">
                      <i class="nc-icon nc-notes"></i>
                      <p>Check in</p>
                   </a>
                </li>
                <li>
-                  <a class="nav-link" href="./typography.html">
+                  <a class="nav-link" href="info_checkout.php">
                      <i class="nc-icon nc-paper-2"></i>
-                     <p>Typography</p>
+                     <p>Check out</p>
                   </a>
                </li>
                <li>
-                  <a class="nav-link" href="./icons.html">
+                  <a class="nav-link" href="agency.php">
                      <i class="nc-icon nc-atom"></i>
-                     <p>Icons</p>
-                  </a>
-               </li>
-               <li>
-                  <a class="nav-link" href="./maps.html">
-                     <i class="nc-icon nc-pin-3"></i>
-                     <p>Maps</p>
-                  </a>
-               </li>
-               <li>
-                  <a class="nav-link" href="./notifications.html">
-                     <i class="nc-icon nc-bell-55"></i>
-                     <p>Notifications</p>
-                  </a>
-               </li>
-               <li class="nav-item active active-pro">
-                  <a class="nav-link active" href="upgrade.html">
-                     <i class="nc-icon nc-alien-33"></i>
-                     <p>Upgrade to PRO</p>
+                     <p>Agency</p>
                   </a>
                </li>
             </ul>

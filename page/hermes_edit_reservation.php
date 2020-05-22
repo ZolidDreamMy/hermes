@@ -12,8 +12,8 @@
 =========================================================
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
- <?php include "../function.php" ?>
- <!DOCTYPE html>
+<?php include "../function.php" ?>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -23,8 +23,7 @@
     <link rel="icon" type="image/png" href=<?php echo base_url("/assets/img/favicon.ico") ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-        name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -37,20 +36,20 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image=<?php echo base_url("/assets/img/sidebar-5.jpg")?>>
+        <div class="sidebar" data-image="<?php echo base_url("/assets/img/sidebar-5.jpg") ?>">
             <!--
-         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
- 
-         Tip 2: you can also add an image using data-image tag
-     -->
+            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+            
+            Tip 2: you can also add an image using data-image tag
+            -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="http://www.creative-tim.com" class="simple-text">
-                        Creative Tim
+                        HERMES
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
+                    <li>
                         <a class="nav-link" href="dashboard.html">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
@@ -62,40 +61,22 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./table.html">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="checkin.php">
                             <i class="nc-icon nc-notes"></i>
-                            <p>Table List</p>
+                            <p>Check in</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./typography.html">
+                        <a class="nav-link" href="info_checkout.php">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                            <p>Check out</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./icons.html">
+                        <a class="nav-link" href="agency.php">
                             <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./maps.html">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="upgrade.html">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Upgrade to PRO</p>
+                            <p>Agency</p>
                         </a>
                     </li>
                 </ul>
@@ -106,8 +87,7 @@
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#pablo"> Dashboard </a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -148,9 +128,7 @@
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="no-icon">Dropdown</span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -177,11 +155,13 @@
                     <div class="col-md-12">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-md-8"><h4 class="card-title">Modify or Cancel this booking</h4></div>
+                                <div class="col-md-8">
+                                    <h4 class="card-title">Modify or Cancel this booking</h4>
+                                </div>
                                 <div class="col-md-4 text-right"><button type="button" class="btn btn-primary"><i class="nc-icon nc-simple-add"></i> Add</button> <button type="button" class="btn btn-info"><i class="nc-icon nc-simple-remove"></i> Close</button></div>
                             </div>
                         </div>
-                        
+
                         <div class="card-body">
                             <!-- row contact -->
                             <hr>
@@ -191,7 +171,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <div class="text-md-right">
-                                        <h4><a href="">S</a> <a href=""  data-toggle="modal" data-target="#exampleModalLong" >C</a></h4>
+                                        <h4><a href="">S</a> <a href="" data-toggle="modal" data-target="#exampleModalLong">C</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -203,8 +183,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>Check In - Check Out (1 nights)</label>
-                                            <input type="text" class="form-control"  placeholder="Check in - check out"
-                                                value="">
+                                            <input type="text" class="form-control" placeholder="Check in - check out" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -212,10 +191,10 @@
                                     <div class="form-group">
                                         <label>Agency</label>
                                         <select class="form-control">
-                                          <option>Booking</option>
-                                          <option>2</option>
+                                            <option>Booking</option>
+                                            <option>2</option>
                                         </select>
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -265,7 +244,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="text-md-right">
-                                            <h4><a href="">S</a> <a href=""  data-toggle="modal" data-target="#exampleModalLong" >C</a> <a href="">M</a></h4>
+                                            <h4><a href="">S</a> <a href="" data-toggle="modal" data-target="#exampleModalLong">C</a> <a href="">M</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -284,8 +263,7 @@
                                                 <div class="col-md">
                                                     <div class="form-group">
                                                         <label>First name</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="first name">
+                                                        <input type="text" class="form-control" placeholder="first name">
                                                     </div>
                                                 </div>
                                             </div>
@@ -293,8 +271,7 @@
                                                 <div class="col-md">
                                                     <div class="form-group">
                                                         <label>Last name</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="first name">
+                                                        <input type="text" class="form-control" placeholder="first name">
                                                     </div>
                                                 </div>
                                             </div>
@@ -310,8 +287,7 @@
                                                 <div class="col-md">
                                                     <div class="form-group">
                                                         <label>Email</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="first name">
+                                                        <input type="text" class="form-control" placeholder="first name">
                                                     </div>
                                                 </div>
                                             </div>
@@ -319,38 +295,35 @@
                                     </div>
                                 </form>
                                 <form class="form-detail" action="#" method="post" id="form">
-                                                         
-                                    <input type="hidden" class="form-control" id="id" name="id" value="<?=$id?>">
+
+                                    <input type="hidden" class="form-control" id="id" name="id" value="<?= $id ?>">
                                     <div class="form-inline">
-                                        
+
                                     </div>
-                                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Cancel Reservation</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <label for="exampleInputEmail1">Please explain,why you need to cancel this reservation (more than 10 characters)?</label>
-                                                <input value="" type="text" class="form-control"  placeholder="Please specify" min="10" required>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save</button>
-                                            </div>
-                                </form> 
-                
+                                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Cancel Reservation</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label for="exampleInputEmail1">Please explain,why you need to cancel this reservation (more than 10 characters)?</label>
+                                                    <input value="" type="text" class="form-control" placeholder="Please specify" min="10" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
-        
+
             </div>
 
             <footer class="footer">
@@ -408,7 +381,7 @@
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src=<?php echo base_url("/assets/js/demo.js") ?>></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 

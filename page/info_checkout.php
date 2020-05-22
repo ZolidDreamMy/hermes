@@ -30,15 +30,20 @@
 
     <body>
         <div class="wrapper">
-            <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+            <div class="sidebar" data-image="<?php echo base_url("/assets/img/sidebar-5.jpg") ?>">
+                <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+            
+            Tip 2: you can also add an image using data-image tag
+            -->
                 <div class="sidebar-wrapper">
                     <div class="logo">
                         <a href="http://www.creative-tim.com" class="simple-text">
-                            Creative Tim
+                            HERMES
                         </a>
                     </div>
                     <ul class="nav">
-                        <li class="nav-item active">
+                        <li>
                             <a class="nav-link" href="dashboard.html">
                                 <i class="nc-icon nc-chart-pie-35"></i>
                                 <p>Dashboard</p>
@@ -50,40 +55,22 @@
                                 <p>User Profile</p>
                             </a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="./table.html">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="checkin.php">
                                 <i class="nc-icon nc-notes"></i>
-                                <p>Table List</p>
+                                <p>Check in</p>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="./typography.html">
+                            <a class="nav-link" href="info_checkout.php">
                                 <i class="nc-icon nc-paper-2"></i>
-                                <p>Typography</p>
+                                <p>Check out</p>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="./icons.html">
+                            <a class="nav-link" href="agency.php">
                                 <i class="nc-icon nc-atom"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="./maps.html">
-                                <i class="nc-icon nc-pin-3"></i>
-                                <p>Maps</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="./notifications.html">
-                                <i class="nc-icon nc-bell-55"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="nav-item active active-pro">
-                            <a class="nav-link active" href="upgrade.html">
-                                <i class="nc-icon nc-alien-33"></i>
-                                <p>Upgrade to PRO</p>
+                                <p>Agency</p>
                             </a>
                         </li>
                     </ul>
@@ -170,9 +157,9 @@
                                                     function local_date(now_time) {
                                                         var arrMonthName = new Array("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
                                                         current_local_time = new Date();
-                                                        if (current_local_time.getDate() == '1' || current_local_time.getDate() =='21'|| current_local_time.getDate() =='31')
+                                                        if (current_local_time.getDate() == '1' || current_local_time.getDate() == '21' || current_local_time.getDate() == '31')
                                                             var z = 'st';
-                                                        else if (current_local_time.getDate() == '2'|| current_local_time.getDate() == '22')
+                                                        else if (current_local_time.getDate() == '2' || current_local_time.getDate() == '22')
                                                             var z = 'nd';
                                                         else if (current_local_time.getDate() == '3' || current_local_time.getDate() == '23')
                                                             var z = 'rd';
@@ -217,20 +204,21 @@
         </div>
     </body>
     <style>
-        
         .fixposition {
             margin-top: 25px;
             margin-left: 25px;
         }
+
         .positions {
             padding-top: 20px;
         }
+
         .position-card {
             padding-left: 20px;
             padding-right: 20px;
         }
     </style>
-    
+
     <!--   Core JS Files   -->
     <!-- <script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js') ?>" type="text/javascript"></script> -->
     <script src="<?php echo base_url('assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
@@ -249,6 +237,6 @@
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?php echo base_url('assets/js/demo.js') ?>"></script>
     <!--    Data table     -->
-  
+
 
 </html>

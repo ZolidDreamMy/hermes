@@ -48,41 +48,23 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./table.html">
+                        <a class="nav-link" href="checkin.php">
                             <i class="nc-icon nc-notes"></i>
-                            <p>Table List</p>
+                            <p>Check In</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./typography.html">
+                        <a class="nav-link" href="info_checkout.php">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                            <p>Check Out</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./icons.html">
+                        <a class="nav-link" href="agency.php">
                             <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
+                            <p>Agency</p>
                         </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./maps.html">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="upgrade.html">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Upgrade to PRO</p>
-                        </a>
-                    </li>
+                    </li>   
                 </ul>
             </div>
         </div>
